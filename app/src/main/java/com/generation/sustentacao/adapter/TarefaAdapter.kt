@@ -21,12 +21,13 @@ class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
     override fun onBindViewHolder(holder: TarefaViewHolder, position: Int) {
         val tarefa = listTarefa[position]
 
-        holder.binding.textNomedaOng.text = tarefa.nomeOng
+
         holder.binding.textNomedoEvento.text = tarefa.nomeEvento
         holder.binding.textDescricao.text = tarefa.descricao
-        holder.binding.textEndereco.text = tarefa.endereco
-        holder.binding.textHorario.text = tarefa.horario
+        holder.binding.textNomedaOng.text = tarefa.nomedaOng
         holder.binding.textData.text = tarefa.data
+        holder.binding.textTema.text = tarefa.tema.descricao
+        holder.binding.textNomedaOng.text = tarefa.autor
     }
 
     override fun getItemCount(): Int {
