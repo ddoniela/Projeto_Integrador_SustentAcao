@@ -20,17 +20,14 @@ class FormFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentFormBinding.inflate(layoutInflater, container, false)
 
-
-        binding.buttonAdd.setOnClickListener{
+        binding.buttonPostar.setOnClickListener{
             findNavController().navigate(R.id.action_formFragment_to_listFragment)
         }
 
         return binding.root
     }
-
-
 }
