@@ -16,7 +16,7 @@ interface ApiService {
     suspend fun addTarefa(
         @Body tarefa: Tarefa
     ): Response<Tarefa>
-    
+
     @GET("postagens")
     suspend fun listTarefa(): Response<List<Tarefa>>
 }

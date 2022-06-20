@@ -36,6 +36,8 @@ class MainViewModel @Inject constructor(
 
     init{
 
+        dataSelecionada.value = LocalDate.now()
+
     }
 
     fun listTema(){
