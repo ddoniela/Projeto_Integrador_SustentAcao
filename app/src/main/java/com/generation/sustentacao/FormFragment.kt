@@ -6,21 +6,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.generation.sustentacao.databinding.FragmentFormBinding
-import com.generation.sustentacao.databinding.FragmentListBinding
+import com.generation.sustentacao.fragment.DatePickerFragment
+import com.generation.sustentacao.fragment.TimerPickerListener
+import com.generation.sustentacao.model.Tarefa
+import com.generation.sustentacao.model.Tema
+import java.time.LocalDate
 
 
-class FormFragment : Fragment() {
+class FormFragment : Fragment(), TimerPickerListener {
 
     private lateinit var binding: FragmentFormBinding
     private val mainViewModel: MainViewModel by activityViewModels()
+    var temaSelecionado = 0L
 
 
     override fun onCreateView(
@@ -33,29 +36,75 @@ class FormFragment : Fragment() {
 
         mainViewModel.listTema()
 
+        mainViewModel.dataSelecionada.value = LocalDate.now()
+
         mainViewModel.myTemaResponse.observe(viewLifecycleOwner){
-            Log.d("Requisicao", it.body().toString())
+           response -> Log.d("Requisicao", response.body().toString())
+            spinnerTema(response.body())
+
+        }
+
+        mainViewModel.dataSelecionada.observe(viewLifecycleOwner){
+            selectedDate -> binding.editTextDate.setText(selectedDate.toString())
+
         }
 
 
         binding.buttonPostar.setOnClickListener{
             inserirNoBanco()
-            //findNavController().navigate(R.id.action_formFragment_to_listFragment)
+
+        }
+
+        binding.editTextDate.setOnClickListener{
+            DatePickerFragment(this)
+                .show(parentFragmentManager, "DatePicker")
         }
 
         return binding.root
     }
 
+    private fun spinnerTema(listTema: List<Tema>?){
+        if (listTema != null){
+            binding.spinnerTema.adapter =
+                ArrayAdapter(
+                    requireContext(),
+                    androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
+                    listTema
+
+                )
+
+            binding.spinnerTema.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener{
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        val selected = binding.spinnerTema.selectedItem as Tema
+
+                        temaSelecionado = selected.id
+                    }
+
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        TODO("Not yet implemented")
+                    }
+
+                }
+        }
+    }
+
+
     fun validarCampos(
-        nome: String, descricao: String, categoria: String, data: String, link: String, autor: String
+        nome: String, descricao: String, link: String, autor: String
     ): Boolean {
 
         return !(
                 (nome == "" || nome.length < 3 || nome.length > 20) ||
                         (descricao == "" || descricao.length < 5 || descricao.length > 200) ||
-                        (categoria == "" || categoria.length < 3 || categoria.length > 20) ||
-                        (data == "" || data.length < 8 || data.length > 10) ||
-                        (link == "" || link.length > 200)
+                        (link == "" || link.length > 200) ||
+                            (autor == "" || autor.length > 50)
+
 
                 )
 
@@ -65,13 +114,14 @@ class FormFragment : Fragment() {
 
         val nome = binding.nomeEventoText.text.toString()
         val desc = binding.descricaoPng.text.toString()
-        val categoria = binding.categoriaEvento.text.toString()
-        val data = binding.editTextDate.text.toString()
         val link = binding.linkImagem.text.toString()
         val autor = binding.editTextNomedaOng.text.toString()
+        val tema = Tema(temaSelecionado, null, null)
 
 
-        if (validarCampos(nome, desc, categoria, data, link, autor)) {
+        if (validarCampos(nome, desc, link, autor)) {
+            val tarefa = Tarefa(nome, autor, desc, link, tema)
+            mainViewModel.addTarefa(tarefa)
 
             Toast.makeText(context, "Tarefa Salva", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_formFragment_to_listFragment)
@@ -81,6 +131,12 @@ class FormFragment : Fragment() {
 
 
     }
+
+    override fun onDateSelected(date: LocalDate) {
+        mainViewModel.dataSelecionada.value = date
+    }
+
+
 }
 
 

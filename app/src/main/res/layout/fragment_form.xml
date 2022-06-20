@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDFDFF">
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -85,19 +86,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/link_imagem" />
 
-    <EditText
-        android:id="@+id/categoria_evento"
-        android:layout_width="370dp"
-        android:layout_height="50dp"
+    <Spinner
+        android:id="@+id/spinnerTema"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
-        android:ems="10"
-        android:hint="Tema"
-        android:inputType="textPersonName"
-        android:padding="10dp"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nome_evento_text" />
@@ -117,7 +113,7 @@
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoria_evento" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTema" />
 
     <EditText
         android:id="@+id/editTextNomedaOng"
@@ -136,7 +132,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descricao.png" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextDate"
         android:layout_width="370dp"
         android:layout_height="50dp"
@@ -149,6 +145,7 @@
         android:hint="Data e Hora"
         android:inputType="date"
         android:padding="10dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNomedaOng" />

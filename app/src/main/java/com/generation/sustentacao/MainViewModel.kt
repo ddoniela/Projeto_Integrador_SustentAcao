@@ -6,11 +6,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.generation.sustentacao.api.Repository
+import com.generation.sustentacao.model.Tarefa
 import com.generation.sustentacao.model.Tema
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.lang.Exception
+import java.time.LocalDate
 import javax.inject.Inject
 
 @HiltViewModel
@@ -24,6 +26,12 @@ class MainViewModel @Inject constructor(
     val myTemaResponse: LiveData<Response<List<Tema>>> =
         _myTemaResponse
 
+    val dataSelecionada = MutableLiveData<LocalDate>()
+
+    init{
+
+    }
+
     fun listTema(){
         viewModelScope.launch {
             try{
@@ -35,5 +43,17 @@ class MainViewModel @Inject constructor(
             }
         }
 
+    }
+
+    fun addTarefa(tarefa: Tarefa){
+        viewModelScope.launch {
+            try {
+                repository.addTarefa(tarefa)
+
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+
+            }
+        }
     }
 }
