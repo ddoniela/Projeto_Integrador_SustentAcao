@@ -42,6 +42,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+        android:backgroundTint="#44084E"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="Postar"
@@ -50,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar3" />
 
     <EditText
-        android:id="@+id/imageView"
+        android:id="@+id/link_imagem"
         android:layout_width="370dp"
         android:layout_height="100dp"
         android:layout_marginStart="20dp"
@@ -58,13 +59,13 @@
         android:layout_marginEnd="20dp"
         android:background="#FFFFFF"
         android:ems="10"
+        android:hint="Link da imagem"
         android:inputType="textPersonName"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomAppBar3"
-        tools:text="Link da imagem" />
+        app:layout_constraintTop_toBottomOf="@+id/bottomAppBar3" />
 
     <EditText
         android:id="@+id/nome_evento_text"
@@ -76,13 +77,13 @@
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
+        android:hint="Nome do evento"
         android:inputType="textPersonName"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:text="Nome do evento" />
+        app:layout_constraintTop_toBottomOf="@+id/link_imagem" />
 
     <EditText
         android:id="@+id/categoria_evento"
@@ -90,14 +91,22 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
+        android:hint="Tema"
         android:inputType="textPersonName"
         android:padding="10dp"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nome_evento_text"
         tools:text="Categoria" />
+=======
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome_evento_text" />
+>>>>>>> 225d1954c9b1daaee820d1feacfd75b7c3522f13
 
     <EditText
         android:id="@+id/descricao.png"
@@ -105,44 +114,66 @@
         android:layout_height="100dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
+        android:hint="Descrição"
         android:inputType="textPersonName"
         android:padding="10dp"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categoria_evento"
         tools:text="Descrição" />
+=======
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoria_evento" />
+>>>>>>> 225d1954c9b1daaee820d1feacfd75b7c3522f13
 
     <EditText
-        android:id="@+id/editTextTime"
-        android:layout_width="175dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:background="#fff"
-        android:backgroundTint="#fff"
-        android:ems="10"
-        android:inputType="time"
-        android:padding="10dp"
-        app:layout_constraintStart_toEndOf="@+id/editTextDate"
-        app:layout_constraintTop_toBottomOf="@+id/descricao.png"
-        tools:text="Hora" />
-
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="175dp"
+        android:id="@+id/editTextNomedaOng"
+        android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:background="#FFFFFF"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
+        android:hint="Autor"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descricao.png" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+<<<<<<< HEAD
+        android:layout_marginTop="12dp"
+=======
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+>>>>>>> 225d1954c9b1daaee820d1feacfd75b7c3522f13
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="Data e Hora"
         android:inputType="date"
         android:padding="10dp"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descricao.png"
         tools:text="Data" />
+=======
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomedaOng" />
+>>>>>>> 225d1954c9b1daaee820d1feacfd75b7c3522f13
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar5"
