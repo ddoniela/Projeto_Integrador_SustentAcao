@@ -12,12 +12,12 @@ interface ApiService {
     @GET("temas")
     suspend fun listTema(): Response<List<Tema>>
 
-    @POST("tarefa")
+    @POST("postagens")
     suspend fun addTarefa(
         @Body tarefa: Tarefa
     ): Response<Tarefa>
 
-    @GET("tarefa")
+    @GET("postagens")
     suspend fun listTarefa(): Response<List<Tarefa>>
 
 }

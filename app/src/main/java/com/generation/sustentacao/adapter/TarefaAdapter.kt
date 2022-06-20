@@ -26,7 +26,7 @@ class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
         holder.binding.textDescricao.text = tarefa.descricao
         holder.binding.textNomedaOng.text = tarefa.autor
         holder.binding.textTema.text = tarefa.tema.descricao
-        holder.binding.textNomedaOng.text = tarefa.autor
+        holder.binding.textData.text = tarefa.dataHora
 
     }
 
