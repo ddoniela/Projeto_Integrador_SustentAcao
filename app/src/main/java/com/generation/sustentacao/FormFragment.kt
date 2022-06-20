@@ -96,13 +96,13 @@ class FormFragment : Fragment(), TimerPickerListener {
 
 
     fun validarCampos(
-        nome: String, descricao: String, link: String, autor: String
+        titulo: String, descricao: String, imagem: String, autor: String
     ): Boolean {
 
         return !(
-                (nome == "" || nome.length < 3 || nome.length > 20) ||
+                (titulo == "" || titulo.length < 3 || titulo.length > 20) ||
                         (descricao == "" || descricao.length < 5 || descricao.length > 200) ||
-                        (link == "" || link.length > 200) ||
+                        (imagem == "" || imagem.length > 200) ||
                             (autor == "" || autor.length > 50)
 
 
@@ -112,15 +112,16 @@ class FormFragment : Fragment(), TimerPickerListener {
 
     fun inserirNoBanco(){
 
-        val nome = binding.nomeEventoText.text.toString()
-        val desc = binding.descricaoPng.text.toString()
-        val link = binding.linkImagem.text.toString()
+        val titulo = binding.nomeEventoText.text.toString()
+        val descricao = binding.descricaoPng.text.toString()
+        val imagem = binding.linkImagem.text.toString()
+        val dataHora = binding.editTextDate.text.toString()
         val autor = binding.editTextNomedaOng.text.toString()
         val tema = Tema(temaSelecionado, null, null)
 
 
-        if (validarCampos(nome, desc, link, autor)) {
-            val tarefa = Tarefa(nome, autor, desc, link, tema)
+        if (validarCampos(titulo, descricao, imagem, dataHora)) {
+            val tarefa = Tarefa(0, titulo, descricao, imagem, dataHora, autor, tema)
             mainViewModel.addTarefa(tarefa)
 
             Toast.makeText(context, "Tarefa Salva", Toast.LENGTH_SHORT).show()
