@@ -3,10 +3,14 @@ package com.generation.sustentacao.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.generation.sustentacao.MainViewModel
 import com.generation.sustentacao.databinding.CardLayoutBinding
 import com.generation.sustentacao.model.Tarefa
 
-class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
+class TarefaAdapter(
+    private val taskItemClickListener: TaskItemClickListener,
+    private val mainViewModel: MainViewModel
+) : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
 
     private var listTarefa = emptyList<Tarefa>()
 
@@ -28,6 +32,9 @@ class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
         holder.binding.textTema.text = tarefa.tema.descricao
         holder.binding.textData.text = tarefa.dataHora
 
+        holder.itemView.setOnClickListener{
+            taskItemClickListener.onTaskClicked(tarefa)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -35,9 +42,7 @@ class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
     }
 
     fun setList(list: List<Tarefa>){
-        listTarefa = list
+        listTarefa = list.sortedBy { it.id }
         notifyDataSetChanged()
     }
-
-
 }

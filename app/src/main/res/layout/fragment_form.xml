@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar3" />
 
     <EditText
-        android:id="@+id/link_imagem"
+        android:id="@+id/linkImagem"
         android:layout_width="370dp"
         android:layout_height="100dp"
         android:layout_marginStart="20dp"
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar3" />
 
     <EditText
-        android:id="@+id/nome_evento_text"
+        android:id="@+id/nomeEventoText"
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/link_imagem" />
+        app:layout_constraintTop_toBottomOf="@+id/linkImagem" />
 
     <Spinner
         android:id="@+id/spinnerTema"
@@ -96,7 +96,7 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome_evento_text" />
+        app:layout_constraintTop_toBottomOf="@+id/nomeEventoText" />
 
     <EditText
         android:id="@+id/descricao.png"
