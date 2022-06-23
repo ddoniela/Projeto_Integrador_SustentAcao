@@ -11,14 +11,16 @@ import com.generation.sustentacao.model.Tema
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
-import java.lang.Exception
 import java.time.LocalDate
 import javax.inject.Inject
+import kotlin.Exception
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
    private val repository: Repository
         ) : ViewModel(){
+
+    var postagemSelecionada: Tarefa? = null
 
     private val _myTemaResponse =
         MutableLiveData<Response<List<Tema>>>()
@@ -48,7 +50,6 @@ class MainViewModel @Inject constructor(
                 Log.d("Erro", e.message.toString())
             }
         }
-
     }
 
     fun addTarefa(tarefa: Tarefa){
@@ -60,7 +61,6 @@ class MainViewModel @Inject constructor(
 
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
-
             }
         }
     }
@@ -73,7 +73,17 @@ class MainViewModel @Inject constructor(
 
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
+            }
+        }
+    }
 
+    fun updateTarefa(tarefa: Tarefa){
+        viewModelScope.launch {
+            try{
+                repository.updatePostagem(tarefa)
+                listTarefa()
+            }catch(e: Exception){
+                Log.d("Erro", e.message.toString())
             }
         }
     }
