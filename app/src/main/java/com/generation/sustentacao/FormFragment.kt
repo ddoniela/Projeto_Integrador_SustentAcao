@@ -24,7 +24,7 @@ class FormFragment : Fragment(), TimerPickerListener {
     private lateinit var binding: FragmentFormBinding
     private val mainViewModel: MainViewModel by activityViewModels()
     var temaSelecionado = 0L
-
+    private var postagemSelecionada: Tarefa? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +33,8 @@ class FormFragment : Fragment(), TimerPickerListener {
         // Inflate the layout for this fragment
 
         binding = FragmentFormBinding.inflate(layoutInflater, container, false)
+
+        carregarDados()
 
         mainViewModel.listTema()
 
@@ -119,11 +121,15 @@ class FormFragment : Fragment(), TimerPickerListener {
         val autor = binding.editTextNomedaOng.text.toString()
         val tema = Tema(temaSelecionado, null, null)
 
-
         if (validarCampos(titulo, descricao, imagem, autor)) {
-            val tarefa = Tarefa(0, titulo, descricao, imagem, dataHora, autor, tema)
-            mainViewModel.addTarefa(tarefa)
-
+            if(postagemSelecionada == null){
+                val tarefa = Tarefa(0, titulo, descricao, imagem, dataHora, autor, tema)
+                mainViewModel.addTarefa(tarefa)
+            }else {
+                val tarefa = Tarefa(postagemSelecionada?.id!!,
+                    titulo, descricao, imagem, dataHora, autor, tema)
+                mainViewModel.updateTarefa(tarefa)
+            }
             Toast.makeText(context, "Tarefa Salva", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_formFragment_to_listFragment)
         } else {
@@ -132,7 +138,22 @@ class FormFragment : Fragment(), TimerPickerListener {
 
 
     }
-
+    private fun carregarDados(){
+        postagemSelecionada = mainViewModel.postagemSelecionada
+        if(postagemSelecionada != null){
+            binding.nomeEventoText.setText(postagemSelecionada?.nomeEvento)
+            binding.descricaoPng.setText(postagemSelecionada?.descricao)
+            binding.linkImagem.setText(postagemSelecionada?.link)
+            binding.editTextDate.text = postagemSelecionada?.dataHora
+            binding.editTextNomedaOng.setText(postagemSelecionada?.autor)
+        } else {
+            binding.nomeEventoText.text = null
+            binding.descricaoPng.text = null
+            binding.linkImagem.text = null
+            binding.editTextDate.text = null
+            binding.editTextNomedaOng.text = null
+        }
+    }
     override fun onDateSelected(date: LocalDate) {
         mainViewModel.dataSelecionada.value = date
     }
