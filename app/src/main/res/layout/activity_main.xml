@@ -21,9 +21,9 @@
 
     <FrameLayout
         android:id="@+id/fl_wrapper"
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_above="@+id/bottomNavigation"/>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
@@ -31,8 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#1E7CA5"
-        app:itemBackground="#1E7CA5"
+        android:minHeight="56dp"
+        app:elevation="8dp"
+        app:itemBackground="@color/teal_200"
         app:itemIconTint="#fff"
+        app:itemPaddingBottom="10dp"
+        app:itemTextColor="@color/white"
         app:menu="@menu/nav_menu" />
 
 
