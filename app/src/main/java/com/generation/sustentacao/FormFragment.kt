@@ -141,9 +141,9 @@ class FormFragment : Fragment(), TimerPickerListener {
     private fun carregarDados(){
         postagemSelecionada = mainViewModel.postagemSelecionada
         if(postagemSelecionada != null){
-            binding.nomeEventoText.setText(postagemSelecionada?.nomeEvento)
+            binding.nomeEventoText.setText(postagemSelecionada?.titulo)
             binding.descricaoPng.setText(postagemSelecionada?.descricao)
-            binding.linkImagem.setText(postagemSelecionada?.link)
+            binding.linkImagem.setText(postagemSelecionada?.imagem)
             binding.editTextDate.text = postagemSelecionada?.dataHora
             binding.editTextNomedaOng.setText(postagemSelecionada?.autor)
         } else {

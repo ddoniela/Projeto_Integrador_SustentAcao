@@ -26,7 +26,7 @@ class TarefaAdapter(
         val tarefa = listTarefa[position]
 
 
-        holder.binding.textNomedoEvento.text = tarefa.nomeEvento
+        holder.binding.textNomedoEvento.text = tarefa.titulo
         holder.binding.textDescricao.text = tarefa.descricao
         holder.binding.textNomedaOng.text = tarefa.autor
         holder.binding.textTema.text = tarefa.tema.descricao
