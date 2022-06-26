@@ -1,6 +1,7 @@
 package com.generation.sustentacao.api
 
-import com.generation.sustentacao.model.Tarefa
+import com.generation.sustentacao.model.TarefaDoacao
+import com.generation.sustentacao.model.TarefaEvento
 import com.generation.sustentacao.model.Tema
 import retrofit2.Response
 import retrofit2.http.Body
@@ -11,19 +12,33 @@ import retrofit2.http.PUT
 interface ApiService {
 
     @GET("temas")
-    suspend fun listTema(): Response<List<Tema>>
+    suspend fun listTemaEvento(): Response<List<Tema>>
 
     @POST("postagens")
-    suspend fun addTarefa(
-        @Body tarefa: Tarefa
-    ): Response<Tarefa>
+    suspend fun addTarefaEvento(
+        @Body tarefa: TarefaEvento
+    ): Response<TarefaEvento>
 
     @GET("postagens")
-    suspend fun listTarefa(): Response<List<Tarefa>>
+    suspend fun listTarefaEvento(): Response<List<TarefaEvento>>
 
     @PUT("postagens")
-    suspend fun updatePostagem(
-        @Body tarefa: Tarefa
-    ): Response<Tarefa>
+    suspend fun updatePostagemEvento(
+        @Body tarefa: TarefaEvento
+    ): Response<TarefaEvento>
+
+    //Doacao
+    @POST("postagens")
+    suspend fun addTarefaDoacao(
+        @Body tarefaDoacao: TarefaDoacao
+    ): Response<TarefaDoacao>
+
+    @GET("postagens")
+    suspend fun listTarefaDoacao(): Response<List<TarefaDoacao>>
+
+    @PUT("postagens")
+    suspend fun updatePostagemDoacao(
+        @Body tarefaDoacao: TarefaDoacao
+    ): Response<TarefaDoacao>
 
 }

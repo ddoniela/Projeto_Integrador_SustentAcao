@@ -1,6 +1,6 @@
 package com.generation.sustentacao.model
 
-data class Tarefa(
+data class TarefaEvento(
     var id: Long,
     var titulo: String,
     var descricao: String,

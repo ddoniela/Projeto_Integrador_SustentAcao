@@ -3,16 +3,17 @@ package com.generation.sustentacao.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.generation.sustentacao.ListFragment
 import com.generation.sustentacao.MainViewModel
 import com.generation.sustentacao.databinding.CardLayoutBinding
-import com.generation.sustentacao.model.Tarefa
+import com.generation.sustentacao.model.TarefaEvento
 
-class TarefaAdapter(
-    private val taskItemClickListener: TaskItemClickListener,
+class TarefaEventoAdapter(
+    private val taskItemClickListenerEvento: ListFragment,
     private val mainViewModel: MainViewModel
-) : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
+) : RecyclerView.Adapter<TarefaEventoAdapter.TarefaViewHolder>(){
 
-    private var listTarefa = emptyList<Tarefa>()
+    private var listTarefa = emptyList<TarefaEvento>()
 
     class TarefaViewHolder (val binding: CardLayoutBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -33,7 +34,7 @@ class TarefaAdapter(
         holder.binding.textData.text = tarefa.dataHora
 
         holder.itemView.setOnClickListener{
-            taskItemClickListener.onTaskClicked(tarefa)
+            taskItemClickListenerEvento.onTaskClickedEvento(tarefa)
         }
     }
 
@@ -41,7 +42,7 @@ class TarefaAdapter(
         return listTarefa.size
     }
 
-    fun setList(list: List<Tarefa>){
+    fun setList(list: List<TarefaEvento>){
         listTarefa = list.sortedBy { it.id }
         notifyDataSetChanged()
     }

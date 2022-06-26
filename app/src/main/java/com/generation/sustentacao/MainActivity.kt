@@ -38,13 +38,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_add -> makeCurrentFragment(addFragment)
             }
             true
-
         }
-
-
-
     }
-
 
     private fun makeCurrentFragment(fragment:Fragment) =
         supportFragmentManager.beginTransaction().apply {

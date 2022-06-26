@@ -1,24 +1,39 @@
 package com.generation.sustentacao.api
 
-import com.generation.sustentacao.model.Tarefa
+import com.generation.sustentacao.model.TarefaDoacao
+import com.generation.sustentacao.model.TarefaEvento
 import com.generation.sustentacao.model.Tema
 import retrofit2.Response
 
 class Repository {
 
-    suspend fun listTema(): Response<List<Tema>>{
-        return RetrofitInstance.api.listTema()
+    //Evento
+    suspend fun listTemaEvento(): Response<List<Tema>>{
+        return RetrofitInstance.api.listTemaEvento()
     }
-    suspend fun addTarefa(tarefa: Tarefa): Response<Tarefa>{
-        return RetrofitInstance.api.addTarefa(tarefa)
-    }
-
-    suspend fun listTarefa(): Response<List<Tarefa>>{
-        return RetrofitInstance.api.listTarefa()
+    suspend fun addTarefaEvento(tarefa: TarefaEvento): Response<TarefaEvento>{
+        return RetrofitInstance.api.addTarefaEvento(tarefa)
     }
 
-    suspend fun updatePostagem(tarefa: Tarefa): Response<Tarefa> {
-        return RetrofitInstance.api.updatePostagem(tarefa)
+    suspend fun listTarefaEvento(): Response<List<TarefaEvento>>{
+        return RetrofitInstance.api.listTarefaEvento()
     }
 
+    suspend fun updatePostagemEvento(tarefa: TarefaEvento): Response<TarefaEvento> {
+        return RetrofitInstance.api.updatePostagemEvento(tarefa)
+    }
+
+
+    //Doacao
+    suspend fun addTarefaDoacao(tarefaDoacao: TarefaDoacao): Response<TarefaDoacao>{
+        return RetrofitInstance.api.addTarefaDoacao(tarefaDoacao)
+    }
+
+    suspend fun listTarefaDoacao(): Response<List<TarefaDoacao>>{
+        return RetrofitInstance.api.listTarefaDoacao()
+    }
+
+    suspend fun updatePostagemDoacao(tarefaDoacao: TarefaDoacao): Response<TarefaDoacao> {
+        return RetrofitInstance.api.updatePostagemDoacao(tarefaDoacao)
+    }
 }

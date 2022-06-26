@@ -6,7 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.generation.sustentacao.api.Repository
-import com.generation.sustentacao.model.Tarefa
+import com.generation.sustentacao.model.TarefaDoacao
+import com.generation.sustentacao.model.TarefaEvento
 import com.generation.sustentacao.model.Tema
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -20,19 +21,24 @@ class MainViewModel @Inject constructor(
    private val repository: Repository
         ) : ViewModel(){
 
-    var postagemSelecionada: Tarefa? = null
+    var postagemEventoSelecionada: TarefaEvento? = null
+    var postagemDoacaoSelecionada: TarefaDoacao? = null
 
-    private val _myTemaResponse =
+    private val _myTemaEventoResponse =
         MutableLiveData<Response<List<Tema>>>()
 
-    val myTemaResponse: LiveData<Response<List<Tema>>> =
-        _myTemaResponse
+    val myTemaEventoResponse: LiveData<Response<List<Tema>>> =
+        _myTemaEventoResponse
 
-    private val _myTarefaResponse =
-        MutableLiveData<Response<List<Tarefa>>>()
+    private val _myTarefaEventoResponse =
+        MutableLiveData<Response<List<TarefaEvento>>>()
+    private val _myTarefaDoacaoResponse =
+        MutableLiveData<Response<List<TarefaDoacao>>>()
 
-    val myTarefaResponse: LiveData<Response<List<Tarefa>>> =
-        _myTarefaResponse
+    val myTarefaEventoResponse: LiveData<Response<List<TarefaEvento>>> =
+        _myTarefaEventoResponse
+    val myTarefaDoacaoResponse: LiveData<Response<List<TarefaDoacao>>> =
+        _myTarefaDoacaoResponse
 
     val dataSelecionada = MutableLiveData<LocalDate>()
 
@@ -40,11 +46,11 @@ class MainViewModel @Inject constructor(
 
     }
 
-    fun listTema(){
+    fun listTemaEvento(){
         viewModelScope.launch {
             try{
-                val response = repository.listTema()
-                _myTemaResponse.value = response
+                val response = repository.listTemaEvento()
+                _myTemaEventoResponse.value = response
 
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
@@ -52,12 +58,12 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun addTarefa(tarefa: Tarefa){
+    fun addTarefaEvento(tarefa: TarefaEvento){
         viewModelScope.launch {
             try {
-               val response = repository.addTarefa(tarefa)
+               val response = repository.addTarefaEvento(tarefa)
                 Log.d("Opa", response.body().toString())
-                listTarefa()
+                listTarefaEvento()
 
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
@@ -65,11 +71,12 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun listTarefa(){
+    fun addTarefaDoacao(tarefaDoacao: TarefaDoacao){
         viewModelScope.launch {
             try {
-                val response = repository.listTarefa()
-                _myTarefaResponse.value = response
+                val response = repository.addTarefaDoacao(tarefaDoacao)
+                Log.d("Opa", response.body().toString())
+                listTarefaDoacao()
 
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
@@ -77,11 +84,44 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun updateTarefa(tarefa: Tarefa){
+    fun listTarefaEvento(){
+        viewModelScope.launch {
+            try {
+                val response = repository.listTarefaEvento()
+                _myTarefaEventoResponse.value = response
+
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+    fun listTarefaDoacao(){
+        viewModelScope.launch {
+            try {
+                val response = repository.listTarefaDoacao()
+                _myTarefaDoacaoResponse.value = response
+
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun updateTarefaEvento(tarefa: TarefaEvento){
         viewModelScope.launch {
             try{
-                repository.updatePostagem(tarefa)
-                listTarefa()
+                repository.updatePostagemEvento(tarefa)
+                listTarefaEvento()
+            }catch(e: Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+    fun updateTarefaDoacao(tarefaDoacao: TarefaDoacao){
+        viewModelScope.launch {
+            try{
+                repository.updatePostagemDoacao(tarefaDoacao)
+                listTarefaDoacao()
             }catch(e: Exception){
                 Log.d("Erro", e.message.toString())
             }

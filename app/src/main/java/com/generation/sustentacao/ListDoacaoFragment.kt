@@ -8,15 +8,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.generation.sustentacao.adapter.TarefaDoacaoAdapter
 import com.generation.sustentacao.adapter.TarefaEventoAdapter
+import com.generation.sustentacao.adapter.TaskItemClickListenerDoacao
 import com.generation.sustentacao.adapter.TaskItemClickListenerEvento
 import com.generation.sustentacao.databinding.FragmentListBinding
+import com.generation.sustentacao.databinding.FragmentListDoacaoBinding
 import com.generation.sustentacao.model.TarefaDoacao
 import com.generation.sustentacao.model.TarefaEvento
 
-class ListFragment : Fragment(), TaskItemClickListenerEvento {
+class ListDoacaoFragment : Fragment(), TaskItemClickListenerDoacao {
 
-    private lateinit var binding: FragmentListBinding
+    private lateinit var binding: FragmentListDoacaoBinding
     private val mainViewModel: MainViewModel by activityViewModels()
 
 
@@ -25,33 +28,33 @@ class ListFragment : Fragment(), TaskItemClickListenerEvento {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentListBinding.inflate(layoutInflater, container, false)
+        binding = FragmentListDoacaoBinding.inflate(layoutInflater, container, false)
 
-        mainViewModel.listTarefaEvento()
+        mainViewModel.listTarefaDoacao()
 
-        val adapter = TarefaEventoAdapter(this,mainViewModel)
+        val adapter = TarefaDoacaoAdapter(this,mainViewModel)
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
         binding.recyclerTarefa.setHasFixedSize(true)
 
 
-        binding.floatingAdd.setOnClickListener{
-            mainViewModel.postagemEventoSelecionada = null
-            findNavController().navigate(R.id.action_listFragment_to_formFragment)
+        binding.floatingAddDoacao.setOnClickListener{
+            mainViewModel.postagemDoacaoSelecionada = null
+            findNavController().navigate(R.id.action_listDoacaoFragment_to_postDoacaoFragment)
         }
 
-        mainViewModel.myTarefaEventoResponse.observe(viewLifecycleOwner){
-            response -> if (response.body() != null){
-                adapter.setList(response.body()!!)
+        mainViewModel.myTarefaDoacaoResponse.observe(viewLifecycleOwner){
+                response -> if (response.body() != null){
+            adapter.setListDoacao(response.body()!!)
         }
         }
 
         return binding.root
     }
 
-    override fun onTaskClickedEvento(tarefa: TarefaEvento) {
-        mainViewModel.postagemEventoSelecionada = tarefa
-        findNavController().navigate(R.id.action_listFragment_to_formFragment)
+    override fun onTaskClickedDoacao(tarefaDoacao: TarefaDoacao) {
+        mainViewModel.postagemDoacaoSelecionada = tarefaDoacao
+        findNavController().navigate(R.id.action_listDoacaoFragment_to_postDoacaoFragment)
     }
 
 }

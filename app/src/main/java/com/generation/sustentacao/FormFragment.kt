@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.generation.sustentacao.databinding.FragmentFormBinding
 import com.generation.sustentacao.fragment.DatePickerFragment
 import com.generation.sustentacao.fragment.TimerPickerListener
-import com.generation.sustentacao.model.Tarefa
+import com.generation.sustentacao.model.TarefaEvento
 import com.generation.sustentacao.model.Tema
 import java.time.LocalDate
 
@@ -24,7 +24,7 @@ class FormFragment : Fragment(), TimerPickerListener {
     private lateinit var binding: FragmentFormBinding
     private val mainViewModel: MainViewModel by activityViewModels()
     var temaSelecionado = 0L
-    private var postagemSelecionada: Tarefa? = null
+    private var postagemSelecionada: TarefaEvento? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,11 +36,11 @@ class FormFragment : Fragment(), TimerPickerListener {
 
         carregarDados()
 
-        mainViewModel.listTema()
+        mainViewModel.listTemaEvento()
 
         mainViewModel.dataSelecionada.value = LocalDate.now()
 
-        mainViewModel.myTemaResponse.observe(viewLifecycleOwner){
+        mainViewModel.myTemaEventoResponse.observe(viewLifecycleOwner){
            response -> Log.d("Requisicao", response.body().toString())
             spinnerTema(response.body())
 
@@ -123,14 +123,14 @@ class FormFragment : Fragment(), TimerPickerListener {
 
         if (validarCampos(titulo, descricao, imagem, autor)) {
             if(postagemSelecionada == null){
-                val tarefa = Tarefa(0, titulo, descricao, imagem, dataHora, autor, tema)
-                mainViewModel.addTarefa(tarefa)
+                val tarefa = TarefaEvento(0, titulo, descricao, imagem, dataHora, autor, tema)
+                mainViewModel.addTarefaEvento(tarefa)
             }else {
-                val tarefa = Tarefa(postagemSelecionada?.id!!,
+                val tarefa = TarefaEvento(postagemSelecionada?.id!!,
                     titulo, descricao, imagem, dataHora, autor, tema)
-                mainViewModel.updateTarefa(tarefa)
+                mainViewModel.updateTarefaEvento(tarefa)
             }
-            Toast.makeText(context, "Tarefa Salva", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "TarefaEvento Salva", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_formFragment_to_listFragment)
         } else {
             Toast.makeText(context, "Verifique os campos!", Toast.LENGTH_SHORT).show()
@@ -139,7 +139,7 @@ class FormFragment : Fragment(), TimerPickerListener {
 
     }
     private fun carregarDados(){
-        postagemSelecionada = mainViewModel.postagemSelecionada
+        postagemSelecionada = mainViewModel.postagemEventoSelecionada
         if(postagemSelecionada != null){
             binding.nomeEventoText.setText(postagemSelecionada?.titulo)
             binding.descricaoPng.setText(postagemSelecionada?.descricao)
