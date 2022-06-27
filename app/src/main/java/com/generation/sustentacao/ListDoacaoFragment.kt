@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,6 +42,13 @@ class ListDoacaoFragment : Fragment(), TaskItemClickListenerDoacao {
         binding.floatingAddDoacao.setOnClickListener{
             mainViewModel.postagemDoacaoSelecionada = null
             findNavController().navigate(R.id.action_listDoacaoFragment_to_postDoacaoFragment)
+        }
+        binding.buttonEvento.setOnClickListener{
+            findNavController().navigate(R.id.action_listDoacaoFragment_to_listFragment2)
+        }
+
+        binding.buttonDoacao.setOnClickListener{
+            Toast.makeText(context, "Você já está na página!", Toast.LENGTH_SHORT).show()
         }
 
         mainViewModel.myTarefaDoacaoResponse.observe(viewLifecycleOwner){
