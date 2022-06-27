@@ -80,10 +80,23 @@ class MainViewModel @Inject constructor(
     fun updateTarefa(tarefa: Tarefa){
         viewModelScope.launch {
             try{
-                repository.updatePostagem(tarefa)
+                repository.updateTarefa(tarefa)
                 listTarefa()
             }catch(e: Exception){
                 Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun deleteTarefa(id: Long){
+        viewModelScope.launch {
+            try {
+                repository.deleteTarefa(id)
+                listTarefa()
+
+            }catch (e: Exception){
+                Log.d("Erro", e.message.toString())
+
             }
         }
     }

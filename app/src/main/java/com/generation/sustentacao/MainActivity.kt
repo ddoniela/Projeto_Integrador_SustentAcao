@@ -3,6 +3,7 @@ package com.generation.sustentacao
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.generation.sustentacao.databinding.ActivityMainBinding
 import com.generation.sustentacao.databinding.FragmentFormBinding
 import com.generation.sustentacao.databinding.FragmentListBinding
@@ -35,8 +36,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_calendar -> makeCurrentFragment(calendarFragment)
                 R.id.ic_chat -> makeCurrentFragment(chatFragment)
                 R.id.ic_settings -> makeCurrentFragment(settingsFragment)
-                R.id.ic_add -> makeCurrentFragment(addFragment)
+                R.id.icAdd -> makeCurrentFragment(FormFragment())
             }
+
+
             true
 
         }

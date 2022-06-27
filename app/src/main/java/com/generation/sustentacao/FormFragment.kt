@@ -104,7 +104,7 @@ class FormFragment : Fragment(), TimerPickerListener {
         return !(
                 (nome == "" || nome.length < 3 || nome.length > 20) ||
                         (descricao == "" || descricao.length < 5 || descricao.length > 200) ||
-                        (link == "" || link.length > 200) ||
+                        (link == "" || link.length > 800) ||
                             (autor == "" || autor.length > 50)
 
 
@@ -122,15 +122,18 @@ class FormFragment : Fragment(), TimerPickerListener {
         val tema = Tema(temaSelecionado, null, null)
 
         if (validarCampos(titulo, descricao, imagem, autor)) {
-            if(postagemSelecionada == null){
+            val salvar: String
+            if(postagemSelecionada != null){
+                salvar = "Tarefa Atualizada!"
                 val tarefa = Tarefa(0, titulo, descricao, imagem, dataHora, autor, tema)
                 mainViewModel.addTarefa(tarefa)
             }else {
+                salvar = "Tarefa Criada!"
                 val tarefa = Tarefa(postagemSelecionada?.id!!,
                     titulo, descricao, imagem, dataHora, autor, tema)
-                mainViewModel.updateTarefa(tarefa)
+                mainViewModel.addTarefa(tarefa)
             }
-            Toast.makeText(context, "Tarefa Salva", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, salvar, Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_formFragment_to_listFragment)
         } else {
             Toast.makeText(context, "Verifique os campos!", Toast.LENGTH_SHORT).show()

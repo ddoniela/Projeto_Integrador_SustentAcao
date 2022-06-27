@@ -3,10 +3,7 @@ package com.generation.sustentacao.api
 import com.generation.sustentacao.model.Tarefa
 import com.generation.sustentacao.model.Tema
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -22,8 +19,13 @@ interface ApiService {
     suspend fun listTarefa(): Response<List<Tarefa>>
 
     @PUT("postagens")
-    suspend fun updatePostagem(
+    suspend fun updateTarefa(
         @Body tarefa: Tarefa
+    ): Response<Tarefa>
+
+    @DELETE("postagens/{id}")
+    suspend fun deleteTarefa(
+        @Path("id") id: Long
     ): Response<Tarefa>
 
 }
