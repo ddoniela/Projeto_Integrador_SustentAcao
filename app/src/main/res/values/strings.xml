@@ -25,4 +25,11 @@
     <string name="tema">Tema</string>
     <string name="data">Data</string>
     <string name="user_image">user_image</string>
+    <string name="data_e_hora">Data e Hora</string>
+    <string name="autor2">Autor</string>
+    <string name="descri_o2">Descrição</string>
+    <string name="nome_do_evento2">Nome do evento</string>
+    <string name="link_da_imagem">Link da imagem</string>
+    <string name="postar">Postar</string>
+    <string name="image_circle">image_circle</string>
 </resources>

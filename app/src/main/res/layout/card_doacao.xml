@@ -162,7 +162,8 @@
             android:background="#E7F7F4"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            >
 
 
             <LinearLayout
