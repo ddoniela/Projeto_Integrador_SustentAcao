@@ -5,27 +5,27 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+
 import com.bumptech.glide.Glide
+import com.generation.sustentacao.ListFragment
 import com.generation.sustentacao.MainViewModel
-import com.generation.sustentacao.databinding.CardLayoutBinding
-import com.generation.sustentacao.model.Tarefa
+import com.generation.sustentacao.databinding.CardEventosBinding
+import com.generation.sustentacao.model.TarefaEvento
 
-class TarefaAdapter(
-    private val taskItemClickListener: TaskItemClickListener,
-    private val mainViewModel: MainViewModel,
-    val context: Context
-) : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
+class TarefaEventoAdapter(
+    private val taskItemClickListenerEvento: ListFragment,
+    private val mainViewModel: MainViewModel
+) : RecyclerView.Adapter<TarefaEventoAdapter.TarefaViewHolder>(){
 
-    private var listTarefa = emptyList<Tarefa>()
+    private var listTarefa = emptyList<TarefaEvento>()
 
-    class TarefaViewHolder (val binding: CardLayoutBinding): RecyclerView.ViewHolder(binding.root)
+    class TarefaViewHolder (val binding: CardEventosBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TarefaViewHolder {
-        return TarefaViewHolder(CardLayoutBinding.inflate(
+        return TarefaViewHolder(CardEventosBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         ))
     }
-
 
     override fun onBindViewHolder(holder: TarefaViewHolder, position: Int) {
 
@@ -42,11 +42,11 @@ class TarefaAdapter(
         holder.binding.textData.text = tarefa.dataHora
 
         holder.itemView.setOnClickListener{
-            taskItemClickListener.onTaskClicked(tarefa)
+            taskItemClickListenerEvento.onTaskClickedEvento(tarefa)
         }
 
-        holder.binding.buttonDeletar.setOnClickListener {
-            showAlertDialog(tarefa.id)
+        holder.binding.buttonDeletarEvento.setOnClickListener {
+            showAlertDialogEvento(tarefa.id)
         }
     }
 
@@ -56,17 +56,17 @@ class TarefaAdapter(
         return listTarefa.size
     }
 
-    fun setList(list: List<Tarefa>){
-        listTarefa = list.sortedByDescending { it.id }
+    fun setList(list: List<TarefaEvento>){
+        listTarefa = list.sortedBy { it.id }
         notifyDataSetChanged()
     }
 
-    private fun showAlertDialog(id: Long){
+    private fun showAlertDialogEvento(id: Long){
         AlertDialog.Builder(context)
             .setTitle("Exluir Tarefa")
             .setMessage("Deseja Excluir a Tarefa?")
             .setPositiveButton("Sim"){
-                _,_ -> mainViewModel.deleteTarefa(id)
+                _,_ -> mainViewModel.deleteTarefaEvento(id)
             }
             .setNegativeButton("Não"){
                 _,_ ->
