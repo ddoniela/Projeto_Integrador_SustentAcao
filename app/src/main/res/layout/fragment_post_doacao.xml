@@ -4,32 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDFDFF"
-    android:backgroundTint="#EDFDFF">
+    android:background="#fff"
+    android:backgroundTint="#fff">
 
     <EditText
         android:id="@+id/doacaoAutor"
         android:layout_width="220dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
+        android:background="@drawable/custom_border"
+        android:textColor="#9C9C9C"
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/doacaoData"
+        app:layout_constraintTop_toBottomOf="@+id/switchDoacao"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="21dp"
         tools:text="Autor" />
-
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar"
-        android:layout_width="411dp"
-        android:layout_height="58dp"
-        android:layout_gravity="bottom"
-        android:backgroundTint="#1E7CA5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -43,16 +34,17 @@
         android:layout_width="412dp"
         android:layout_height="56dp"
         android:layout_gravity="bottom"
-        android:layout_marginEnd="1dp"
-        android:backgroundTint="#1E7CA5"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:backgroundTint="#020934"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/png"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#3F51B5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar9"
@@ -62,8 +54,9 @@
         android:id="@+id/postarDoacao"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
+        android:backgroundTint="#FD8F84"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="Postar"
@@ -75,13 +68,13 @@
         android:id="@+id/doacaoNome"
         android:layout_width="220dp"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/custom_border"
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/bottomAppBar9"
+        android:textColor="#9C9C9C"
+        app:layout_constraintTop_toBottomOf="@+id/png"
         tools:layout_editor_absoluteX="20dp"
         tools:text="Produto" />
 
@@ -90,14 +83,14 @@
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/custom_border"
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="#9C9C9C"
         app:layout_constraintStart_toEndOf="@+id/doacaoNome"
-        app:layout_constraintTop_toBottomOf="@+id/bottomAppBar9"
+        app:layout_constraintTop_toBottomOf="@+id/postarDoacao"
         tools:text="Quantidade" />
 
     <EditText
@@ -105,11 +98,11 @@
         android:layout_width="370dp"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
+        android:background="@drawable/custom_border"
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="#9C9C9C"
         app:layout_constraintTop_toBottomOf="@+id/doacaoNome"
         tools:layout_editor_absoluteX="21dp"
         tools:text="Descrição" />
@@ -119,9 +112,11 @@
         android:layout_width="175dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/custom_border"
         android:checked="false"
         android:splitTrack="false"
         android:text="Entrega"
+        android:textColor="#9C9C9C"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/doacaoDescricao"
         tools:layout_editor_absoluteX="20dp" />
@@ -130,14 +125,15 @@
         android:id="@+id/doacaoData"
         android:layout_width="175dp"
         android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
+        android:background="@drawable/custom_border"
         android:ems="10"
         android:inputType="date"
         android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/switchDoacao"
-        tools:layout_editor_absoluteX="21dp"
+        android:textColor="#9C9C9C"
+        app:layout_constraintStart_toEndOf="@+id/switchDoacao"
+        app:layout_constraintTop_toBottomOf="@+id/doacaoDescricao"
         tools:text="Data e hora" />
 
     <com.google.android.material.chip.ChipGroup
