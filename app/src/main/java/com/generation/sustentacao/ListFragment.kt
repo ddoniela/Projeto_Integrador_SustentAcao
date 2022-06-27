@@ -29,7 +29,7 @@ class ListFragment : Fragment(), TaskItemClickListenerEvento {
         mainViewModel.listTarefaEvento()
 
 
-        val adapter = TarefaEventoAdapter(this, mainViewModel)
+        val adapter = TarefaEventoAdapter(this, mainViewModel, requireContext())
 
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
@@ -39,14 +39,14 @@ class ListFragment : Fragment(), TaskItemClickListenerEvento {
 
         binding.floatingEvento.setOnClickListener{
             mainViewModel.postagemEventoSelecionada = null
-
             findNavController().navigate(R.id.action_listFragment_to_formFragment)
+
         }
 
         mainViewModel.myTarefaEventoResponse.observe(viewLifecycleOwner){
             response -> if (response.body() != null){
                 adapter.setList(response.body()!!)
-        }
+            }
         }
 
         return binding.root

@@ -1,11 +1,12 @@
 package com.generation.sustentacao.adapter
 
+import android.R
 import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.generation.sustentacao.ListFragment
 import com.generation.sustentacao.MainViewModel
@@ -14,9 +15,9 @@ import com.generation.sustentacao.model.TarefaEvento
 
 class TarefaEventoAdapter(
     private val taskItemClickListenerEvento: ListFragment,
-    private val mainViewModel: MainViewModel
+    private val mainViewModel: MainViewModel,
+    private val context: Context
 ) : RecyclerView.Adapter<TarefaEventoAdapter.TarefaViewHolder>(){
-
     private var listTarefa = emptyList<TarefaEvento>()
 
     class TarefaViewHolder (val binding: CardEventosBinding): RecyclerView.ViewHolder(binding.root)
@@ -33,7 +34,7 @@ class TarefaEventoAdapter(
 
         Glide.with(context)
             .load(tarefa.imagem)
-            .placeholder(android.R.drawable.ic_menu_report_image)
+            .placeholder(R.drawable.ic_menu_report_image)
             .into(holder.binding.imageEvento)
         holder.binding.textNomedoEvento.text = tarefa.titulo
         holder.binding.textDescricao.text = tarefa.descricao
