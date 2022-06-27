@@ -37,18 +37,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_chat -> makeCurrentFragment(chatFragment)
                 R.id.ic_settings -> makeCurrentFragment(settingsFragment)
                 R.id.icAdd -> makeCurrentFragment(FormFragment())
-
             }
 
 
             true
-
         }
-
-
-
     }
-
 
     private fun makeCurrentFragment(fragment:Fragment) =
         supportFragmentManager.beginTransaction().apply {

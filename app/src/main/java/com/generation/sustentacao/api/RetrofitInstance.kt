@@ -1,7 +1,6 @@
 package com.generation.sustentacao.api
 
 import com.generation.sustentacao.Constants
-import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

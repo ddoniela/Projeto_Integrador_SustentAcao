@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.generation.sustentacao.adapter.TarefaAdapter
-import com.generation.sustentacao.adapter.TaskItemClickListener
+import com.generation.sustentacao.adapter.TarefaEventoAdapter
+import com.generation.sustentacao.adapter.TaskItemClickListenerEvento
 import com.generation.sustentacao.databinding.FragmentListBinding
-import com.generation.sustentacao.model.Tarefa
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.generation.sustentacao.model.TarefaEvento
 
-class ListFragment : Fragment(),TaskItemClickListener {
+class ListFragment : Fragment(), TaskItemClickListenerEvento {
 
     private lateinit var binding: FragmentListBinding
     private val mainViewModel: MainViewModel by activityViewModels()
@@ -27,21 +26,24 @@ class ListFragment : Fragment(),TaskItemClickListener {
         // Inflate the layout for this fragment
         binding = FragmentListBinding.inflate(layoutInflater, container, false)
 
-        mainViewModel.listTarefa()
+        mainViewModel.listTarefaEvento()
 
-        val adapter = TarefaAdapter(this,mainViewModel, requireContext())
+
+        val adapter = TarefaEventoAdapter(this, mainViewModel)
+
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
         binding.recyclerTarefa.setHasFixedSize(true)
 
 
 
-        binding.icAdd.setOnClickListener{
-            mainViewModel.postagemSelecionada = null
+        binding.floatingEvento.setOnClickListener{
+            mainViewModel.postagemEventoSelecionada = null
+
             findNavController().navigate(R.id.action_listFragment_to_formFragment)
         }
 
-        mainViewModel.myTarefaResponse.observe(viewLifecycleOwner){
+        mainViewModel.myTarefaEventoResponse.observe(viewLifecycleOwner){
             response -> if (response.body() != null){
                 adapter.setList(response.body()!!)
         }
@@ -50,10 +52,9 @@ class ListFragment : Fragment(),TaskItemClickListener {
         return binding.root
     }
 
-    override fun onTaskClicked(tarefa: Tarefa) {
-        mainViewModel.postagemSelecionada = tarefa
+    override fun onTaskClickedEvento(tarefa: TarefaEvento) {
+        mainViewModel.postagemEventoSelecionada = tarefa
         findNavController().navigate(R.id.action_listFragment_to_formFragment)
     }
-
 
 }

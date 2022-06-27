@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/listFragment">
+    app:startDestination="@id/menuBaseFragment">
 
     <fragment
         android:id="@+id/listFragment"
@@ -13,6 +13,11 @@
         <action
             android:id="@+id/action_listFragment_to_formFragment"
             app:destination="@id/formFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_menuBaseFragment"
+            app:destination="@id/menuBaseFragment"
+            app:popUpTo="@id/menuBaseFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/formFragment"
@@ -24,5 +29,42 @@
             app:destination="@id/listFragment"
             app:popUpTo="@id/listFragment"
             app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDoacaoFragment"
+        android:name="com.generation.sustentacao.PostDoacaoFragment"
+        android:label="fragment_post_doacao"
+        tools:layout="@layout/fragment_post_doacao" >
+        <action
+            android:id="@+id/action_postDoacaoFragment_to_listDoacaoFragment"
+            app:destination="@id/listDoacaoFragment"
+            app:popUpTo="@id/listDoacaoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/listDoacaoFragment"
+        android:name="com.generation.sustentacao.ListDoacaoFragment"
+        android:label="fragment_list_doacao"
+        tools:layout="@layout/fragment_list_doacao" >
+        <action
+            android:id="@+id/action_listDoacaoFragment_to_postDoacaoFragment"
+            app:destination="@id/postDoacaoFragment" />
+        <action
+            android:id="@+id/action_listDoacaoFragment_to_menuBaseFragment"
+            app:destination="@id/menuBaseFragment"
+            app:popUpTo="@id/menuBaseFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuBaseFragment"
+        android:name="com.generation.sustentacao.MenuBaseFragment"
+        android:label="fragment_menu_base"
+        tools:layout="@layout/fragment_menu_base" >
+        <action
+            android:id="@+id/action_menuBaseFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_menuBaseFragment_to_listDoacaoFragment"
+            app:destination="@id/listDoacaoFragment" />
     </fragment>
 </navigation>

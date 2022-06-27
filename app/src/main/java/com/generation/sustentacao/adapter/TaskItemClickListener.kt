@@ -1,7 +1,12 @@
 package com.generation.sustentacao.adapter
 
-import com.generation.sustentacao.model.Tarefa
+import com.generation.sustentacao.model.TarefaDoacao
+import com.generation.sustentacao.model.TarefaEvento
 
-interface TaskItemClickListener {
-    fun onTaskClicked(tarefa: Tarefa)
+interface TaskItemClickListenerEvento {
+    fun onTaskClickedEvento(tarefa: TarefaEvento)
+}
+
+interface TaskItemClickListenerDoacao {
+    fun onTaskClickedDoacao(tarefaDoacao: TarefaDoacao)
 }
