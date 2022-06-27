@@ -6,10 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".ListFragment" >
 
+    <Button
+        android:id="@+id/buttonEvento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins"
+        android:text="Evento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonDoacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins"
+        android:text="Doação"
+        app:layout_constraintStart_toEndOf="@+id/buttonEvento"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerTarefa"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,8 +43,8 @@
         android:id="@+id/floatingEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="88dp"
         android:clickable="true"
         android:src="@drawable/adicionar_post"
         app:layout_constraintBottom_toBottomOf="parent"

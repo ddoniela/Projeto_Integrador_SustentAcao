@@ -15,7 +15,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins"
             android:text="Evento"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +26,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins"
             android:text="Doação"
             app:layout_constraintStart_toEndOf="@+id/buttonEvento"
             app:layout_constraintTop_toTopOf="parent" />
