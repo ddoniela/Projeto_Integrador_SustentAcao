@@ -14,9 +14,10 @@ import com.generation.sustentacao.databinding.CardEventosBinding
 import com.generation.sustentacao.model.TarefaEvento
 
 class TarefaEventoAdapter(
+    private val context: Context,
     private val taskItemClickListenerEvento: ListFragment,
     private val mainViewModel: MainViewModel,
-    private val context: Context
+
 ) : RecyclerView.Adapter<TarefaEventoAdapter.TarefaViewHolder>(){
     private var listTarefa = emptyList<TarefaEvento>()
 
@@ -33,7 +34,7 @@ class TarefaEventoAdapter(
         val tarefa = listTarefa[position]
 
 
-        lateinit var context: Context
+
         Glide.with(context)
             .load(tarefa.imagem)
             .placeholder(R.drawable.ic_menu_report_image)
@@ -65,8 +66,7 @@ class TarefaEventoAdapter(
     }
 
     private fun showAlertDialogEvento(id: Long){
-        lateinit var context: Context
-        AlertDialog.Builder(context)
+            AlertDialog.Builder(context)
             .setTitle("Exluir Tarefa")
             .setMessage("Deseja Excluir a Tarefa?")
             .setPositiveButton("Sim"){

@@ -12,7 +12,6 @@ android:id="@+id/ic_calendar"
 android:icon="@drawable/ic_baseline_calendar_today_24"
 android:title="Agenda"/>
 
-<<<<<<< HEAD
     <item
         android:id="@+id/ic_add"
         android:icon="@drawable/ic_baseline_add_circle_24"
@@ -29,22 +28,3 @@ android:title="Agenda"/>
         android:title="Perfil"/>
 
 </menu>
-=======
-<item
-android:id="@+id/ic_add"
-android:icon="@drawable/ic_baseline_add_circle_24"
-android:title="Adicionar"/>
-
-<item
-android:id="@+id/ic_chat"
-android:icon="@drawable/ic_baseline_chat_24"
-android:title="Mensagem"/>
-
-<item
-android:id="@+id/ic_settings"
-android:icon="@drawable/ic_baseline_person_pin_24"
-android:title="Perfil"/>
-
-</menu>
-
->>>>>>> c1f22bb3b8d46029533020c10f6322f7eb9056b4

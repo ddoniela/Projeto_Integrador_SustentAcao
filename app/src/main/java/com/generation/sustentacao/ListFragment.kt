@@ -29,7 +29,9 @@ class ListFragment : Fragment(), TaskItemClickListenerEvento {
         mainViewModel.listTarefaEvento()
 
 
-        val adapter = TarefaEventoAdapter(this, mainViewModel, requireContext())
+
+        val adapter = TarefaEventoAdapter(requireContext(),this, mainViewModel)
+
 
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
