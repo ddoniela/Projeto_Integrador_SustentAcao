@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_calendar -> makeCurrentFragment(calendarFragment)
                 R.id.ic_chat -> makeCurrentFragment(chatFragment)
                 R.id.ic_settings -> makeCurrentFragment(settingsFragment)
-                R.id.ic_add -> makeCurrentFragment(addFragment)
+                R.id.ic_add -> makeCurrentFragment(addFragment) /*formFragment*/
             }
             true
 

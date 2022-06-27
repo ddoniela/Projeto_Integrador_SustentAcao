@@ -18,8 +18,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:hint="Autor"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/autor"
             android:textColor="@color/black"
+            android:textColorHint="#2E2E2E"
             android:textSize="20sp" />
 
         <ImageView
@@ -27,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:contentDescription="@string/user_image"
             app:srcCompat="@drawable/imagem" />
 
         <TextView
@@ -34,16 +37,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:hint="Nome do Evento"
-            android:textColor="@color/black"
-            android:textSize="28sp" />
+            android:fontFamily="@font/poppins"
+            android:hint="@string/nome_do_evento"
+            android:textColor="#020934"
+            android:textColorHint="#2E2E2E"
+            android:textSize="28sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descrição"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/descri_o"
             android:textColor="@color/black"
+            android:textColorHint="#2E2E2E"
             android:textSize="20sp" />
 
         <TextView
@@ -51,8 +60,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:hint="Tema"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/tema"
             android:textColor="@color/black"
+            android:textColorHint="#2E2E2E"
             android:textSize="20sp" />
 
         <TextView
@@ -60,8 +71,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:hint="Data"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/data"
             android:textColor="@color/black"
+            android:textColorHint="#2E2E2E"
             android:textSize="20sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
