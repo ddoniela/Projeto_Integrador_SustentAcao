@@ -36,7 +36,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_calendar -> makeCurrentFragment(calendarFragment)
                 R.id.ic_chat -> makeCurrentFragment(chatFragment)
                 R.id.ic_settings -> makeCurrentFragment(settingsFragment)
+<<<<<<< HEAD
                 R.id.icAdd -> makeCurrentFragment(FormFragment())
+=======
+                R.id.ic_add -> makeCurrentFragment(addFragment) /*formFragment*/
+>>>>>>> BarraDoacao
             }
 
 
