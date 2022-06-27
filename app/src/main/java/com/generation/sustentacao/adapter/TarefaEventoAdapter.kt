@@ -31,6 +31,8 @@ class TarefaEventoAdapter(
 
         val tarefa = listTarefa[position]
 
+
+        lateinit var context: Context
         Glide.with(context)
             .load(tarefa.imagem)
             .placeholder(android.R.drawable.ic_menu_report_image)
@@ -62,6 +64,7 @@ class TarefaEventoAdapter(
     }
 
     private fun showAlertDialogEvento(id: Long){
+        lateinit var context: Context
         AlertDialog.Builder(context)
             .setTitle("Exluir Tarefa")
             .setMessage("Deseja Excluir a Tarefa?")

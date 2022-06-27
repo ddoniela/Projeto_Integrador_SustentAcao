@@ -1,39 +1,5 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:id="@+id/ic_home"
-        android:icon="@drawable/ic_baseline_home_24"
-        android:title="Eventos"
-        />
-
-    <item
-        android:id="@+id/ic_calendar"
-        android:icon="@drawable/ic_baseline_calendar_today_24"
-        android:title="Agenda"/>
-
-    <item
-        android:id="@+id/icAdd"
-        android:icon="@drawable/ic_baseline_add_circle_24"
-        android:title="Adicionar"/>
-
-    <item
-        android:id="@+id/ic_chat"
-        android:icon="@drawable/ic_baseline_chat_24"
-        android:title="Mensagem"/>
-
-    <item
-        android:id="@+id/ic_settings"
-        android:icon="@drawable/ic_baseline_person_pin_24"
-        android:title="Perfil"/>
-
-
-
-</menu>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android%22%3E
 
  <item
 android:id="@+id/ic_home"
@@ -61,6 +27,5 @@ android:id="@+id/ic_settings"
 android:icon="@drawable/ic_baseline_person_pin_24"
 android:title="Perfil"/>
 
+</menu>
 
-    </menu>
->>>>>>> origin/Isa
