@@ -29,7 +29,6 @@
         android:background="#71C1BD"
         android:minHeight="56dp"
         app:elevation="8dp"
-        app:itemBackground="#71C1BD"
         app:itemIconTint="#fff"
         app:itemPaddingBottom="10dp"
         app:itemTextColor="@color/white"

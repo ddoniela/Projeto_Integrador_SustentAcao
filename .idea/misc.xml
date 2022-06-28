@@ -28,6 +28,7 @@
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/drawable-anydpi/ic_spinner.xml" value="0.2235" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/drawable-xxhdpi/ic_spinner.xml" value="0.2235" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/custom_border.xml" value="0.2235" />
+        <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/custom_login.xml" value="0.231" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/custom_spinner.xml" value="0.2235" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/custom_textview.xml" value="0.2235" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/ic_adicionar_post.xml" value="0.2235" />
@@ -38,7 +39,9 @@
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2235" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/spinner.xml" value="0.2235" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_main.xml" value="0.2203125" />
-        <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_form.xml" value="0.152" />
+        <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_form.xml" value="0.4" />
+        <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list_doacao.xml" value="0.2203125" />
+        <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_login.xml" value="0.2" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_menu_base.xml" value="0.2" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_post_doacao.xml" value="0.264" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/menu/nav_menu.xml" value="0.2203125" />
