@@ -7,13 +7,6 @@
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="390dp" />
-
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar3"
         android:layout_width="412dp"
@@ -36,7 +29,7 @@
         android:contentDescription="@string/image_circle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar3"
-        app:srcCompat="@drawable/bolinha" />
+        app:srcCompat="@drawable/do_utilizador__1_" />
 
     <Button
         android:id="@+id/buttonPostar"
@@ -81,11 +74,11 @@
         android:layout_marginEnd="20dp"
         android:autofillHints="event_name"
         android:background="@drawable/custom_border"
-        android:textColor="#9C9C9C"
         android:ems="10"
         android:hint="@string/nome_do_evento2"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="#9C9C9C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -144,14 +137,14 @@
         android:id="@+id/editTextDate"
         android:layout_width="175dp"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
+
+
         android:background="@drawable/custom_border"
-
-
-
         android:ems="10"
-        android:hint="Data e hora"
 
+        android:hint="Data e hora"
         android:inputType="date"
         android:padding="10dp"
         android:textColor="#9C9C9C"
@@ -159,15 +152,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toEndOf="@+id/editTextNomedaOng"
-        tools:ignore="TextViewEdits"
-        tools:layout_editor_absoluteY="529dp" />
+        app:layout_constraintTop_toBottomOf="@+id/descricao.png"
+        tools:ignore="TextViewEdits" />
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

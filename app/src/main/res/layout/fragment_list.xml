@@ -13,6 +13,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins"
+        android:backgroundTint="#FD8F84"
         android:text="Evento"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +25,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins"
+        android:backgroundTint="#FD8F84"
         android:text="Doação"
         app:layout_constraintStart_toEndOf="@+id/buttonEvento"
         app:layout_constraintTop_toTopOf="parent" />
@@ -46,7 +48,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="88dp"
         android:clickable="true"
-        android:src="@drawable/adicionar_post"
+        android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

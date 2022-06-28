@@ -11,24 +11,18 @@
         android:id="@+id/doacaoAutor"
         android:layout_width="220dp"
         android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_border"
-        android:textColor="#9C9C9C"
         android:ems="10"
         android:fontFamily="@font/poppins"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="#9C9C9C"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchDoacao"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="21dp"
         tools:text="Autor" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar9"
@@ -49,7 +43,7 @@
         android:backgroundTint="#3F51B5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar9"
-        app:srcCompat="@drawable/bolinha" />
+        app:srcCompat="@drawable/do_utilizador__1_" />
 
     <Button
         android:id="@+id/postarDoacao"
@@ -70,6 +64,7 @@
         android:id="@+id/doacaoNome"
         android:layout_width="220dp"
         android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/custom_border"
         android:ems="10"
@@ -77,8 +72,8 @@
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="#9C9C9C"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/png"
-        tools:layout_editor_absoluteX="20dp"
         tools:text="Produto" />
 
     <EditText
@@ -108,14 +103,16 @@
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="#9C9C9C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doacaoNome"
-        tools:layout_editor_absoluteX="21dp"
         tools:text="Descrição" />
 
     <Switch
         android:id="@+id/switchDoacao"
         android:layout_width="175dp"
         android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/custom_border"
         android:checked="false"
@@ -124,8 +121,8 @@
         android:text="Entrega"
         android:textColor="#9C9C9C"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/doacaoDescricao"
-        tools:layout_editor_absoluteX="20dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doacaoDescricao" />
 
     <EditText
         android:id="@+id/doacaoData"
