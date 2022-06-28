@@ -31,7 +31,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#3F51B5"
         android:contentDescription="@string/image_circle"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,13 +42,13 @@
         android:id="@+id/buttonPostar"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
-
         android:backgroundTint="#FD8F84"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:text="@string/postar"
+        android:text="postar"
+
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar3" />
@@ -58,19 +58,19 @@
         android:layout_width="370dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="link"
         android:background="@drawable/custom_border"
-        android:textColor="#9C9C9C"
         android:ems="10"
         android:hint="@string/link_da_imagem"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="#9C9C9C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomAppBar3" />
+        app:layout_constraintTop_toBottomOf="@+id/bolinha.png" />
 
     <EditText
         android:id="@+id/nomeEventoText"
@@ -98,7 +98,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/custom_spinner"
+        android:background="@drawable/custom_border"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,39 +124,44 @@
 
     <EditText
         android:id="@+id/editTextNomedaOng"
-        android:layout_width="370dp"
+        android:layout_width="175dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custom_border"
-        android:textColor="#9C9C9C"
         android:ems="10"
         android:hint="@string/autor2"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="#9C9C9C"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descricao.png" />
 
     <TextView
         android:id="@+id/editTextDate"
-        android:layout_width="370dp"
+        android:layout_width="175dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custom_border"
-        android:textColor="#9C9C9C"
+
+
+
         android:ems="10"
-        android:hint="@string/data_e_hora"
+        android:hint="Data e hora"
+
         android:inputType="date"
         android:padding="10dp"
+        android:textColor="#9C9C9C"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNomedaOng"
-        tools:ignore="TextViewEdits" />
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toEndOf="@+id/editTextNomedaOng"
+        tools:ignore="TextViewEdits"
+        tools:layout_editor_absoluteY="529dp" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
