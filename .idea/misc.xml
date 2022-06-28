@@ -10,7 +10,11 @@
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao-Projeto/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao-Projeto/app/src/main/res/layout/post_doacao.xml" value="0.33" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao-Projeto/app/src/main/res/menu/nav_menu.xml" value="0.21" />
+
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_main.xml" value="0.22" />
+
+        <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_main.xml" value="0.33" />
+
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_doacao.xml" value="0.33" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_eventos.xml" value="0.25" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_layout.xml" value="0.33" />
@@ -20,10 +24,15 @@
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_chat.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_form.xml" value="0.22" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_home.xml" value="0.22447916666666667" />
+
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list.xml" value="0.22" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list_doacao.xml" value="0.22" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_menu_base.xml" value="0.33" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_post_doacao.xml" value="0.33" />
+
+        <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_menu_base.xml" value="0.1" />
+
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_settings.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/layout/post_doacao.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Sustentacao/Projeto_Integrador_SustentAcao/app/src/main/res/menu/nav_menu.xml" value="0.22447916666666667" />
@@ -42,14 +51,20 @@
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_main.xml" value="0.2203125" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_form.xml" value="0.264" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_menu_base.xml" value="0.2" />
+
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_post_doacao.xml" value="0.2" />
+
+        <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_post_doacao.xml" value="0.264" />
+
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto/Projeto_Integrador_SustentAcao/app/src/main/res/menu/nav_menu.xml" value="0.2203125" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_main.xml" value="0.2203125" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_layout.xml" value="0.2203125" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_form.xml" value="0.176" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list.xml" value="0.2203125" />
         <entry key="..\:/Users/isabe/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/post_doacao.xml" value="0.2" />
+
         <entry key="..\:/Users/marco/AndroidStudioProjects/SustentAcao/Sustentacao-Projeto/app/src/main/res/drawable/background_botao.xml" value="0.2995" />
+
         <entry key="..\:/Users/marco/AndroidStudioProjects/SustentAcao/Sustentacao-Projeto/app/src/main/res/layout/activity_main.xml" value="0.266304347826087" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/SustentAcao/Sustentacao-Projeto/app/src/main/res/layout/card_layout.xml" value="0.33" />
         <entry key="..\:/Users/marco/AndroidStudioProjects/SustentAcao/Sustentacao-Projeto/app/src/main/res/layout/fragment_form.xml" value="0.33" />
