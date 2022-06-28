@@ -15,15 +15,21 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph" />
 
+    <FrameLayout
+        android:id="@+id/fl_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavigation" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#1E7CA5"
+        android:background="#71C1BD"
         android:minHeight="56dp"
         app:elevation="8dp"
-        app:itemBackground="@color/teal_200"
+        app:itemBackground="#71C1BD"
         app:itemIconTint="#fff"
         app:itemPaddingBottom="10dp"
         app:itemTextColor="@color/white"
