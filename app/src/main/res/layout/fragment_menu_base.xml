@@ -10,14 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="409dp"
+            android:layout_height="70dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="-3dp" />
+
         <Button
             android:id="@+id/buttonEvento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/poppins"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="80dp"
             android:backgroundTint="#FD8F84"
+            android:fontFamily="@font/poppins"
             android:text="Evento"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,11 +37,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/poppins"
+            android:layout_marginTop="80dp"
             android:backgroundTint="#FD8F84"
+            android:fontFamily="@font/poppins"
             android:text="Doação"
             app:layout_constraintStart_toEndOf="@+id/buttonEvento"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonAgenda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="34dp"
+            android:backgroundTint="#FD8F84"
+            android:fontFamily="@font/poppins"
+            android:text="Agenda"
+            app:layout_constraintStart_toEndOf="@+id/buttonDoacao"
+            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            tools:ignore="UnknownId" />
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="330dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:background="#fff"
+            android:radius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </SearchView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
