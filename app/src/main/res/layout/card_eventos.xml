@@ -36,6 +36,7 @@
             android:id="@+id/buttonDeletarEvento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FD8F84"
             android:text="Deletar" />
 
         <TextView

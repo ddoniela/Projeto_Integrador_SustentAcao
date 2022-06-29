@@ -131,7 +131,7 @@ class FormFragment : Fragment(), TimerPickerListener {
                     titulo, descricao, imagem, dataHora, autor, tema)
                 mainViewModel.updateTarefaEvento(tarefa)
             }
-            Toast.makeText(context, "TarefaEvento Salva", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Evento salvo", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_formFragment_to_listFragment)
         } else {
             Toast.makeText(context, "Verifique os campos!", Toast.LENGTH_SHORT).show()
