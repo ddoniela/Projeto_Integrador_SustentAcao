@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val homeFragment = HomeFragment()
-        val addFragment = AddFragment()
         val calendarFragment = CalendarFragment()
         val chatFragment = ChatFragment()
         val settingsFragment = SettingsFragment()
@@ -36,7 +35,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_calendar -> makeCurrentFragment(calendarFragment)
                 R.id.ic_chat -> makeCurrentFragment(chatFragment)
                 R.id.ic_settings -> makeCurrentFragment(settingsFragment)
-                R.id.ic_add -> makeCurrentFragment(FormFragment())
             }
 
 

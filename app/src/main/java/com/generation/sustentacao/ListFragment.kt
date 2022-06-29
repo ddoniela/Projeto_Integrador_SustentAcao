@@ -64,6 +64,7 @@ class ListFragment : Fragment(), TaskItemClickListenerEvento {
     override fun onTaskClickedEvento(tarefa: TarefaEvento) {
         mainViewModel.postagemEventoSelecionada = tarefa
         findNavController().navigate(R.id.action_listFragment_to_formFragment)
+
     }
 
 }

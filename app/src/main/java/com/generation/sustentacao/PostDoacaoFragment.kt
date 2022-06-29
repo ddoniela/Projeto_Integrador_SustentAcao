@@ -85,7 +85,7 @@ class PostDoacaoFragment : Fragment(), TimerPickerListener {
                     produto, quantidade, descricao, descricao, entrega, data)
                 mainViewModel.updateTarefaDoacao(tarefa)
             }
-            Toast.makeText(context, "TarefaEvento Salva", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Evento criado!", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_postDoacaoFragment_to_listDoacaoFragment)
         } else {
             Toast.makeText(context, "Verifique os campos!", Toast.LENGTH_SHORT).show()

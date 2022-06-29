@@ -5,6 +5,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -47,6 +48,7 @@ class TarefaEventoAdapter(
 
         holder.itemView.setOnClickListener{
             taskItemClickListenerEvento.onTaskClickedEvento(tarefa)
+
         }
 
         holder.binding.buttonDeletarEvento.setOnClickListener {
