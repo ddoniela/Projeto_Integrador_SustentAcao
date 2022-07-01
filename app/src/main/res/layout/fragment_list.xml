@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListFragment" >
+    android:background="#E0F7FA"
+    tools:context=".ListFragment">
 
     <Button
         android:id="@+id/buttonEvento"
@@ -63,9 +64,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerTarefa"
         android:layout_width="0dp"
-        android:layout_height="650dp"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:background="#FCFDFC"
+        android:background="#E3F2FD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -86,7 +87,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#020934"
         android:minHeight="?attr/actionBarSize"
