@@ -13,16 +13,54 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <TextView
-            android:id="@+id/textNomedaOng"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins"
-            android:hint="@string/autor"
-            android:textColor="@color/black"
-            android:textColorHint="#2E2E2E"
-            android:textSize="20sp" />
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textNomedaOng"
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/poppins"
+                    android:hint="@string/autor"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#2E2E2E"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/buttonDeletarEvento"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#FD8F84"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="0dp"
+                    android:textSize="12sp"
+                    app:icon="@drawable/ic_baseline_delete_24"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconTint="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/textNomedaOng"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageEvento"
@@ -32,56 +70,120 @@
             android:contentDescription="@string/user_image"
             app:srcCompat="@drawable/imagem" />
 
-        <Button
-            android:id="@+id/buttonDeletarEvento"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FD8F84"
-            android:text="Deletar" />
+            android:layout_height="37dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textNomedoEvento"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins"
-            android:hint="@string/nome_do_evento"
-            android:textColor="#020934"
-            android:textColorHint="#2E2E2E"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textNomedoEvento"
+                    android:layout_width="250dp"
+                    android:layout_height="34dp"
+                    android:fontFamily="@font/poppins"
+                    android:hint="@string/nome_do_evento"
+                    android:paddingStart="5dp"
+                    android:textColor="#020934"
+                    android:textColorHint="#020934"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/buttonCalendario"
+                    android:layout_width="34dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="-3dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="#E9F7F7"
+                    android:drawableTint="#71C1BD"
+                    app:icon="@drawable/ic_baseline_calendar_today_24"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconSize="22sp"
+                    app:iconTint="#71C1BD"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonLike"
+                    app:layout_constraintStart_toEndOf="@+id/textNomedoEvento"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/buttonLike"
+                    android:layout_width="34dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="-3dp"
+                    android:layout_marginEnd="5dp"
+                    android:backgroundTint="#E9F7F7"
+                    android:drawableTint="#71C1BD"
+                    app:icon="@drawable/ic_baseline_favorite_border_24"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconSize="26sp"
+                    app:iconTint="#71C1BD"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/poppins"
             android:hint="@string/descri_o"
-            android:textColor="@color/black"
-            android:textColorHint="#2E2E2E"
-            android:textSize="20sp" />
+            android:paddingStart="5dp"
+            android:textColor="#808080"
+            android:textColorHint="#808080"
+            android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textTema"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins"
-            android:hint="@string/tema"
-            android:textColor="@color/black"
-            android:textColorHint="#2E2E2E"
-            android:textSize="20sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textData"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins"
-            android:hint="@string/data"
-            android:textColor="@color/black"
-            android:textColorHint="#2E2E2E"
-            android:textSize="20sp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textTema"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:hint="@string/tema"
+                    android:paddingStart="5dp"
+                    android:textColor="#020934"
+                    android:textColorHint="#020934"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textData"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/poppins"
+                    android:hint="@string/data"
+                    android:paddingEnd="5dp"
+                    android:textAlignment="textEnd"
+                    android:textColor="#020934"
+                    android:textColorHint="#020934"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/textTema"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

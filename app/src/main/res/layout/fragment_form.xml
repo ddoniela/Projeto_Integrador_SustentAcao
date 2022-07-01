@@ -29,7 +29,7 @@
         android:contentDescription="@string/image_circle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar3"
-        app:srcCompat="@drawable/do_utilizador__1_" />
+        app:srcCompat="@drawable/ic_usuario" />
 
     <Button
         android:id="@+id/buttonPostar"

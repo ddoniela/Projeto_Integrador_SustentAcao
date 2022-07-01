@@ -43,7 +43,7 @@
         android:backgroundTint="#3F51B5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bottomAppBar9"
-        app:srcCompat="@drawable/do_utilizador__1_" />
+        app:srcCompat="@drawable/ic_usuario" />
 
     <Button
         android:id="@+id/postarDoacao"

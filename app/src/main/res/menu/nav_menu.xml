@@ -13,6 +13,10 @@ android:icon="@drawable/ic_baseline_calendar_today_24"
 android:title="Agenda"/>
 
     <item
+        android:id="@+id/ic_postagem"
+        android:icon="@drawable/ic_adicionar_post"
+        android:title="Postagem" />
+    <item
         android:id="@+id/ic_chat"
         android:icon="@drawable/ic_baseline_chat_24"
         android:title="Mensagem"/>

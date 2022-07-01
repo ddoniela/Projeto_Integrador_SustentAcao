@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.generation.sustentacao.ListDoacaoFragment
 import com.generation.sustentacao.MainViewModel
-import com.generation.sustentacao.databinding.CardpostLayoutBinding
+import com.generation.sustentacao.databinding.CardDoacaoBinding
 import com.generation.sustentacao.model.TarefaDoacao
 
 class TarefaDoacaoAdapter(
@@ -15,10 +15,10 @@ class TarefaDoacaoAdapter(
 
     private var listTarefa = emptyList<TarefaDoacao>()
 
-    class TarefaDoacaoViewHolder (val binding: CardpostLayoutBinding): RecyclerView.ViewHolder(binding.root)
+    class TarefaDoacaoViewHolder (val binding: CardDoacaoBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TarefaDoacaoViewHolder {
-        return TarefaDoacaoViewHolder(CardpostLayoutBinding.inflate(
+        return TarefaDoacaoViewHolder(CardDoacaoBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         ))
     }
@@ -29,7 +29,7 @@ class TarefaDoacaoAdapter(
 
         holder.binding.doacaoAutorCard.text = tarefa.autor
         holder.binding.doacaoProdutoCard.text = tarefa.produto
-        holder.binding.doacaoDescricaoCard.text = tarefa.descricao
+        holder.binding.doacaoEntregaCard.text = tarefa.entrega.toString()
         holder.binding.doacaoDataCard.text = tarefa.data
 
         holder.itemView.setOnClickListener{
