@@ -19,10 +19,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val homeFragment = HomeFragment()
+        val homeFragment = ListFragment()
         val calendarFragment = CalendarFragment()
         val chatFragment = ChatFragment()
         val settingsFragment = SettingsFragment()
+        val postagemFragment = FormFragment()
 
         makeCurrentFragment(homeFragment)
 
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_calendar -> makeCurrentFragment(calendarFragment)
                 R.id.ic_chat -> makeCurrentFragment(chatFragment)
                 R.id.ic_settings -> makeCurrentFragment(settingsFragment)
+                R.id.ic_postagem -> makeCurrentFragment(postagemFragment)
             }
 
 
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun makeCurrentFragment(fragment:Fragment) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_wrapper,fragment)
+            replace(R.id.fragment_container,fragment)
             commit()
         }
 }

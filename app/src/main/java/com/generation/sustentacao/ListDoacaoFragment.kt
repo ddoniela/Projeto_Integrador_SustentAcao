@@ -39,10 +39,6 @@ class ListDoacaoFragment : Fragment(), TaskItemClickListenerDoacao {
         binding.recyclerTarefa.setHasFixedSize(true)
 
 
-        binding.floatingAddDoacao.setOnClickListener{
-            mainViewModel.postagemDoacaoSelecionada = null
-            findNavController().navigate(R.id.action_listDoacaoFragment_to_postDoacaoFragment)
-        }
         binding.buttonEvento.setOnClickListener{
             findNavController().navigate(R.id.action_listDoacaoFragment_to_listFragment2)
         }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
     app:cardElevation="10dp">
 
     <LinearLayout
@@ -16,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginBottom="10dp"
-            android:background="#E7F7F4"
+            android:background="#FFF"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="10dp">
@@ -34,7 +35,7 @@
                     android:fontFamily="@font/poppins"
                     android:gravity="start"
                     android:hint="@string/doa_o"
-                    android:textColorHint="#2E2E2E"
+                    android:textColorHint="#020934"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +49,7 @@
                     android:fontFamily="@font/poppins"
                     android:gravity="end"
                     android:hint="@string/_00_00_00"
-                    android:textColorHint="#2E2E2E"
+                    android:textColorHint="#020934"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +65,7 @@
                     android:fontFamily="@font/poppins"
                     android:gravity="start"
                     android:hint="@string/nome_do_doador"
-                    android:textColorHint="#2E2E2E"
+                    android:textColorHint="#717171"
                     android:textSize="11sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/doacaoProdutoCard" />
@@ -75,7 +76,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="end"
-                    android:text="@string/retirada"
+                    android:hint="Retirada"
+                    android:textColorHint="#717171"
                     android:textSize="11sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"

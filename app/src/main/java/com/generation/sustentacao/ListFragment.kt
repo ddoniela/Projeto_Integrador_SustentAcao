@@ -29,22 +29,12 @@ class ListFragment : Fragment(), TaskItemClickListenerEvento {
 
         mainViewModel.listTarefaEvento()
 
-
-
         val adapter = TarefaEventoAdapter(requireContext(),this, mainViewModel)
-
 
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
         binding.recyclerTarefa.setHasFixedSize(true)
 
-
-
-        binding.floatingEvento.setOnClickListener{
-            mainViewModel.postagemEventoSelecionada = null
-            findNavController().navigate(R.id.action_listFragment_to_formFragment)
-
-        }
         binding.buttonEvento.setOnClickListener{
             Toast.makeText(context, "Você já está na página!", Toast.LENGTH_SHORT).show()
         }

@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
- <item
-android:id="@+id/ic_home"
-android:icon="@drawable/ic_baseline_home_24"
-android:title="Eventos"
-/>
+    <item
+        android:id="@+id/ic_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Início" />
 
-<item
-android:id="@+id/ic_calendar"
-android:icon="@drawable/ic_baseline_calendar_today_24"
-android:title="Agenda"/>
-
+    <item
+        android:id="@+id/ic_calendar"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
+      android:title="Agenda"/>
     <item
         android:id="@+id/ic_postagem"
         android:icon="@drawable/ic_adicionar_post"

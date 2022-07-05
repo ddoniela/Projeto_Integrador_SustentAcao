@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    app:cardCornerRadius="20dp"
     app:cardElevation="10dp">
 
     <LinearLayout
@@ -29,8 +30,8 @@
                     android:fontFamily="@font/poppins"
                     android:hint="@string/autor"
                     android:paddingStart="5dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="#2E2E2E"
+                    android:textColor="#020934"
+                    android:textColorHint="#020934"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -139,9 +140,9 @@
             android:fontFamily="@font/poppins"
             android:hint="@string/descri_o"
             android:paddingStart="5dp"
-            android:textColor="#808080"
-            android:textColorHint="#808080"
-            android:textSize="18sp" />
+            android:textColor="#717171"
+            android:textColorHint="#717171"
+            android:textSize="14sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -167,9 +168,8 @@
 
                 <TextView
                     android:id="@+id/textData"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_width="110dp"
+                    android:layout_height="27dp"
                     android:fontFamily="@font/poppins"
                     android:hint="@string/data"
                     android:paddingEnd="5dp"
@@ -177,6 +177,7 @@
                     android:textColor="#020934"
                     android:textColorHint="#020934"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/textTema"

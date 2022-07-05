@@ -23,7 +23,7 @@ class FormFragment : Fragment(), TimerPickerListener {
 
     private lateinit var binding: FragmentFormBinding
     private val mainViewModel: MainViewModel by activityViewModels()
-    var temaSelecionado = 0L
+    private var temaSelecionado = 0L
     private var postagemSelecionada: TarefaEvento? = null
 
     override fun onCreateView(
@@ -43,18 +43,14 @@ class FormFragment : Fragment(), TimerPickerListener {
         mainViewModel.myTemaEventoResponse.observe(viewLifecycleOwner){
            response -> Log.d("Requisicao", response.body().toString())
             spinnerTema(response.body())
-
         }
 
         mainViewModel.dataSelecionada.observe(viewLifecycleOwner){
             selectedDate -> binding.editTextDate.setText(selectedDate.toString())
-
         }
-
 
         binding.buttonPostar.setOnClickListener{
             inserirNoBanco()
-
         }
 
         binding.editTextDate.setOnClickListener{
