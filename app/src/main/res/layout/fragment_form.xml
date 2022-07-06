@@ -50,7 +50,9 @@
         android:id="@+id/linkImagem"
         android:layout_width="370dp"
         android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:autofillHints="link"
         android:background="@drawable/custom_border"
         android:ems="10"
@@ -66,7 +68,9 @@
         android:id="@+id/nomeEventoText"
         android:layout_width="370dp"
         android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:autofillHints="event_name"
         android:background="@drawable/custom_border"
         android:ems="10"
@@ -95,51 +99,72 @@
         android:id="@+id/descricao.png"
         android:layout_width="370dp"
         android:layout_height="100dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
         android:autofillHints="description"
         android:background="@drawable/custom_border"
         android:ems="10"
         android:hint="@string/descri_o2"
-        android:textColor="#9C9C9C"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textColor="#9C9C9C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerTema" />
 
-    <EditText
-        android:id="@+id/editTextNomedaOng"
-        android:layout_width="170dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/custom_border"
-        android:ems="10"
-        android:hint="@string/autor2"
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textColor="#9C9C9C"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descricao.png" />
-
-    <TextView
-        android:id="@+id/editTextDate"
-        android:layout_width="170dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custom_border"
-        android:ems="10"
-        android:hint="Data"
-        android:inputType="date"
-        android:padding="10dp"
-        android:textColor="#9C9C9C"
-        android:textSize="18sp"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextNomedaOng"
-        app:layout_constraintTop_toBottomOf="@+id/descricao.png"
-        tools:ignore="TextViewEdits" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descricao.png">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/editTextNomedaOng"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="200dp"
+                android:background="@drawable/custom_border"
+                android:ems="10"
+                android:hint="@string/autor2"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textColor="#9C9C9C"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/editTextDate"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/custom_border"
+                android:ems="10"
+                android:hint="Data"
+                android:inputType="date"
+                android:padding="10dp"
+                android:textAlignment="viewStart"
+                android:textColor="#9C9C9C"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/editTextNomedaOng"
+                app:layout_constraintTop_toTopOf="@+id/editTextNomedaOng"
+                tools:ignore="TextViewEdits" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
