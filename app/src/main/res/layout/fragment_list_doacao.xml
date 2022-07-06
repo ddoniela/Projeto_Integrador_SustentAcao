@@ -28,7 +28,7 @@
         android:id="@+id/buttonDoacao"
         android:layout_width="110dp"
         android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#FD8F84"
         android:fontFamily="@font/poppins"
         android:paddingLeft="0dp"
@@ -39,6 +39,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -59,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/buttonDoacao"
-        app:layout_constraintTop_toTopOf="@+id/buttonDoacao" />
+        tools:layout_editor_absoluteY="73dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerTarefa"
@@ -75,7 +76,7 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#020934"
         android:minHeight="?attr/actionBarSize"
@@ -89,6 +90,7 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
         android:src="@drawable/imagem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
