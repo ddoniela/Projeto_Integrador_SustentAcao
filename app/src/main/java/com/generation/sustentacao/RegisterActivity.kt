@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import android.content.Intent
+import android.widget.Button
+import android.widget.TextView
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -15,7 +17,19 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        val textSignUp = findViewById<TextView>(R.id.textSignUp)
+        textSignUp.setOnClickListener {
+
+            startActivity(Intent(this, LoginActivity::class.java))
+
+        }
+
+        val buttonRegister = findViewById<Button>(R.id.buttonRegister)
         buttonRegister.setOnClickListener {
+
+            val editTextEmail = findViewById<TextView>(R.id.editTextEmail)
+            val editTextPassword = findViewById<TextView>(R.id.editTextPassword)
+
             when {
                 TextUtils.isEmpty(editTextEmail.text.toString().trim { it <= ' ' }) -> {
                     Toast.makeText(
