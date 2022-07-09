@@ -83,7 +83,7 @@
             android:layout_marginBottom="50dp"
             android:backgroundTint="#020934"
             android:fontFamily="@font/poppins"
-            android:text="@string/entrar"
+            android:text="Registrar"
             app:cornerRadius="20dp" />
 
         <TextView

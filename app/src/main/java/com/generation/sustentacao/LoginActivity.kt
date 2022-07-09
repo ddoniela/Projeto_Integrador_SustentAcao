@@ -17,21 +17,21 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val textSignUp = findViewById<TextView>(R.id.textSignUp)
-        textSignUp.setOnClickListener {
+        val textCreate = findViewById<TextView>(R.id.textCreate)
+        textCreate.setOnClickListener {
 
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
 
-        val buttonRegister = findViewById<Button>(R.id.buttonRegister)
+        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
 
-        buttonRegister.setOnClickListener {
+        buttonLogin.setOnClickListener {
 
-            val editTextEmail = findViewById<TextView>(R.id.editTextEmail)
-            val editTextPassword = findViewById<TextView>(R.id.editTextPassword)
+            val editTextEmailLogin = findViewById<TextView>(R.id.editTextEmailLogin)
+            val editTextPasswordLogin = findViewById<TextView>(R.id.editTextPasswordLogin)
 
             when {
-                TextUtils.isEmpty(editTextEmail.text.toString().trim { it <= ' ' }) -> {
+                TextUtils.isEmpty(editTextEmailLogin.text.toString().trim { it <= ' ' }) -> {
                     Toast.makeText(
                         this@LoginActivity,
                         "Por favor, insira seu e-mail.",
@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
                     ).show()
                 }
 
-                TextUtils.isEmpty(editTextPassword.text.toString().trim { it <= ' ' }) -> {
+                TextUtils.isEmpty(editTextPasswordLogin.text.toString().trim { it <= ' ' }) -> {
                     Toast.makeText(
                         this@LoginActivity,
                         "Por favor, insira sua senha.",
@@ -49,16 +49,13 @@ class LoginActivity : AppCompatActivity() {
 
                 else -> {
 
-                    val email: String = editTextEmail.text.toString().trim { it <= ' ' }
-                    val password: String = editTextPassword.text.toString().trim { it <= ' ' }
+                    val email: String = editTextEmailLogin.text.toString().trim { it <= ' ' }
+                    val password: String = editTextPasswordLogin.text.toString().trim { it <= ' ' }
 
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(
-                            OnCompleteListener<AuthResult> { task ->
+                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener { task ->
 
                                 if (task.isSuccessful) {
-
-                                    val firebaseUser: FirebaseUser = task.result!!.user!!
 
                                     Toast.makeText(
                                         this@LoginActivity,
@@ -70,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
                                         Intent(this@LoginActivity, MainActivity::class.java)
                                     intent.flags =
                                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                    intent.putExtra("user_id", firebaseUser.uid)
+                                    intent.putExtra("user_id", FirebaseAuth.getInstance().currentUser!!.uid)
                                     intent.putExtra("email_id", email)
                                     startActivity(intent)
                                     finish()
@@ -84,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
                                 }
 
 
-                            })
+                            }
 
                 }
 

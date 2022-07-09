@@ -20,7 +20,7 @@ class RegisterActivity : AppCompatActivity() {
         val textSignUp = findViewById<TextView>(R.id.textSignUp)
         textSignUp.setOnClickListener {
 
-            startActivity(Intent(this, LoginActivity::class.java))
+            onBackPressed()
 
         }
 
@@ -89,7 +89,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
 
             }
+        }
 
         }
     }
-}
