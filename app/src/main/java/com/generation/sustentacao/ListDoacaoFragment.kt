@@ -57,8 +57,8 @@ class ListDoacaoFragment : Fragment(), TaskItemClickListenerDoacao {
     }
 
     override fun onTaskClickedDoacao(tarefaDoacao: TarefaDoacao) {
-        mainViewModel.postagemDoacaoSelecionada = tarefaDoacao
-        findNavController().navigate(R.id.action_listDoacaoFragment_to_postDoacaoFragment)
+        /*mainViewModel.postagemDoacaoSelecionada = tarefaDoacao
+        findNavController().navigate(R.id.action_listDoacaoFragment_to_postDoacaoFragment)*/
     }
 
 }

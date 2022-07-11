@@ -29,7 +29,7 @@ class FormFragment : Fragment(), TimerPickerListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
 
         binding = FragmentFormBinding.inflate(layoutInflater, container, false)
@@ -46,7 +46,8 @@ class FormFragment : Fragment(), TimerPickerListener {
         }
 
         mainViewModel.dataSelecionada.observe(viewLifecycleOwner){
-            selectedDate -> binding.editTextDate.setText(selectedDate.toString())
+            selectedDate ->
+            binding.editTextDate.text = selectedDate.toString()
         }
 
         binding.buttonPostar.setOnClickListener{
@@ -93,7 +94,7 @@ class FormFragment : Fragment(), TimerPickerListener {
     }
 
 
-    fun validarCampos(
+    private fun validarCampos(
         nome: String, descricao: String, link: String, autor: String
     ): Boolean {
 
@@ -102,20 +103,17 @@ class FormFragment : Fragment(), TimerPickerListener {
                         (descricao == "" || descricao.length < 5 || descricao.length > 200) ||
                         (link == "" || link.length > 800) ||
                             (autor == "" || autor.length > 50)
-
-
                 )
-
     }
 
-    fun inserirNoBanco(){
+    private fun inserirNoBanco(){
 
+        val imagem = binding.linkImagem.text.toString()
         val titulo = binding.nomeEventoText.text.toString()
         val descricao = binding.descricaoPng.text.toString()
-        val imagem = binding.linkImagem.text.toString()
-        val dataHora = binding.editTextDate.text.toString()
-        val autor = binding.editTextNomedaOng.text.toString()
         val tema = Tema(temaSelecionado, null, null)
+        val autor = binding.editTextNomedaOng.text.toString()
+        val dataHora = binding.editTextDate.text.toString()
 
         if (validarCampos(titulo, descricao, imagem, autor)) {
 
@@ -132,8 +130,6 @@ class FormFragment : Fragment(), TimerPickerListener {
         } else {
             Toast.makeText(context, "Verifique os campos!", Toast.LENGTH_SHORT).show()
         }
-
-
     }
     private fun carregarDados(){
         postagemSelecionada = mainViewModel.postagemEventoSelecionada

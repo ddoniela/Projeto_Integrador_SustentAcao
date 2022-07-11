@@ -34,8 +34,6 @@ class TarefaEventoAdapter(
 
         val tarefa = listTarefa[position]
 
-
-
         Glide.with(context)
             .load(tarefa.imagem)
             .placeholder(R.drawable.ic_menu_report_image)
@@ -48,7 +46,6 @@ class TarefaEventoAdapter(
 
         holder.itemView.setOnClickListener{
             taskItemClickListenerEvento.onTaskClickedEvento(tarefa)
-
         }
 
         holder.binding.buttonDeletarEvento.setOnClickListener {
@@ -64,7 +61,7 @@ class TarefaEventoAdapter(
 
     fun setList(list: List<TarefaEvento>){
         listTarefa = list.sortedBy { it.id }
-        notifyDataSetChanged()
+        this.notifyDataSetChanged()
     }
 
     private fun showAlertDialogEvento(id: Long){

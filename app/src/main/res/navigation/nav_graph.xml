@@ -32,13 +32,7 @@
         android:id="@+id/postDoacaoFragment"
         android:name="com.generation.sustentacao.PostDoacaoFragment"
         android:label="fragment_post_doacao"
-        tools:layout="@layout/fragment_post_doacao" >
-        <action
-            android:id="@+id/action_postDoacaoFragment_to_listDoacaoFragment"
-            app:destination="@id/listDoacaoFragment"
-            app:popUpTo="@id/listDoacaoFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+        tools:layout="@layout/fragment_post_doacao" />
     <fragment
         android:id="@+id/listDoacaoFragment"
         android:name="com.generation.sustentacao.ListDoacaoFragment"

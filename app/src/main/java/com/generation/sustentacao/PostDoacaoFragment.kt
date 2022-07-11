@@ -12,7 +12,6 @@ import com.generation.sustentacao.databinding.FragmentPostDoacaoBinding
 import com.generation.sustentacao.fragment.DatePickerFragment
 import com.generation.sustentacao.fragment.TimerPickerListener
 import com.generation.sustentacao.model.TarefaDoacao
-import com.generation.sustentacao.model.TarefaEvento
 import java.time.LocalDate
 
 
@@ -86,7 +85,7 @@ class PostDoacaoFragment : Fragment(), TimerPickerListener {
                 mainViewModel.updateTarefaDoacao(tarefa)
             }
             Toast.makeText(context, "Doação criada!", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_postDoacaoFragment_to_listDoacaoFragment)
+            //findNavController().navigate(R.id.action_postDoacaoFragment_to_listDoacaoFragment)
         } else {
             Toast.makeText(context, "Verifique os campos!", Toast.LENGTH_SHORT).show()
         }
