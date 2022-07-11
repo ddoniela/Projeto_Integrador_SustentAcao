@@ -29,7 +29,10 @@ tools:context=".MainActivity">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/nav_menu"
+        android:layout_alignParentBottom="true"
         android:background="#71C1BD"
+        android:minHeight="56dp"
+        app:elevation="8dp"
         app:itemIconTint="#fff"
         app:itemTextColor="#fff"/>
 

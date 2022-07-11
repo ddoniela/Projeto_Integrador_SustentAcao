@@ -23,6 +23,17 @@
         app:layout_constraintTop_toBottomOf="@+id/switchDoacao"
         tools:ignore="MissingConstraints"
         tools:text="Autor" />
+        app:layout_constraintTop_toBottomOf="@+id/switchDoacao"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="21dp"
+        tools:text="Autor" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar9"
@@ -32,7 +43,8 @@
         android:backgroundTint="#020934"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="BottomAppBar" />
 
     <ImageView
         android:id="@+id/png"
@@ -51,7 +63,9 @@
         android:layout_height="60dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
+
         android:fontFamily="@font/poppins"
+
         android:backgroundTint="#FD8F84"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -74,6 +88,7 @@
         android:textColor="#9C9C9C"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/png"
+        tools:layout_editor_absoluteX="20dp"
         tools:text="Produto" />
 
     <EditText
@@ -105,6 +120,7 @@
         android:textColor="#9C9C9C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/doacaoNome"
         tools:text="Descrição" />
 
