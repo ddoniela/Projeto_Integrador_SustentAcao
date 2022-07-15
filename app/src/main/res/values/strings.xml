@@ -32,4 +32,13 @@
     <string name="link_da_imagem">Link da imagem</string>
     <string name="postar">Postar</string>
     <string name="image_circle">image_circle</string>
+    <string name="insira_seu_e_mail">Insira seu E-mail</string>
+    <string name="insira_sua_senha">Insira sua senha</string>
+    <string name="email">EMAIL</string>
+    <string name="senha">SENHA</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="voc_ainda_n_o_t_m_uma_conta">Você ainda não têm uma conta?</string>
+    <string name="crie_aqui">CRIE AQUI!</string>
+    <string name="esqueceu_a_senha">Esqueceu a Senha?</string>
+    <string name="login">LOGIN</string>
 </resources>

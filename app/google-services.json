@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "518903773460",
+    "project_id": "sustentacao-firebase",
+    "storage_bucket": "sustentacao-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518903773460:android:3a00afb42ee408c6166a01",
+        "android_client_info": {
+          "package_name": "com.generation.sustentacao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518903773460-772rcgj83rt6boih7i2aecqihor15pul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeoeZe-aI--9z17gE6G2F_v7-ZbfnC3S0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518903773460-772rcgj83rt6boih7i2aecqihor15pul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,22 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.kotlin_version = "1.4.10"
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+
     dependencies {
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
+        //Firebase
+        classpath "com.android.tools.build:gradle:4.0.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.3.13'
     }
 }
+
 plugins {
     id 'com.android.application' version '7.2.1' apply false
     id 'com.android.library' version '7.2.1' apply false
@@ -14,3 +26,6 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+
