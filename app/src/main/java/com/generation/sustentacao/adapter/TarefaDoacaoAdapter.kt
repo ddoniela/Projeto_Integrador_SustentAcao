@@ -11,16 +11,19 @@ import com.generation.sustentacao.model.TarefaDoacao
 class TarefaDoacaoAdapter(
     private val taskItemClickListenerDoacao: ListDoacaoFragment,
     private val mainViewModel: MainViewModel
-) : RecyclerView.Adapter<TarefaDoacaoAdapter.TarefaDoacaoViewHolder>(){
+) : RecyclerView.Adapter<TarefaDoacaoAdapter.TarefaDoacaoViewHolder>() {
 
     private var listTarefa = emptyList<TarefaDoacao>()
 
-    class TarefaDoacaoViewHolder (val binding: CardDoacaoBinding): RecyclerView.ViewHolder(binding.root)
+    class TarefaDoacaoViewHolder(val binding: CardDoacaoBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TarefaDoacaoViewHolder {
-        return TarefaDoacaoViewHolder(CardDoacaoBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
-        ))
+        return TarefaDoacaoViewHolder(
+            CardDoacaoBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: TarefaDoacaoViewHolder, position: Int) {
@@ -32,7 +35,7 @@ class TarefaDoacaoAdapter(
         holder.binding.doacaoEntregaCard.text = tarefa.entrega.toString()
         holder.binding.doacaoDataCard.text = tarefa.data
 
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             taskItemClickListenerDoacao.onTaskClickedDoacao(tarefa)
         }
     }
@@ -41,7 +44,7 @@ class TarefaDoacaoAdapter(
         return listTarefa.size
     }
 
-    fun setListDoacao(list: List<TarefaDoacao>){
+    fun setListDoacao(list: List<TarefaDoacao>) {
         listTarefa = list.sortedBy { it.id }
         notifyDataSetChanged()
     }

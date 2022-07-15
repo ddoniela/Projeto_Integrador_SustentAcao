@@ -1,22 +1,18 @@
 package com.generation.sustentacao
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.generation.sustentacao.adapter.TarefaDoacaoAdapter
-import com.generation.sustentacao.adapter.TarefaEventoAdapter
 import com.generation.sustentacao.adapter.TaskItemClickListenerDoacao
-import com.generation.sustentacao.adapter.TaskItemClickListenerEvento
-import com.generation.sustentacao.databinding.FragmentListBinding
 import com.generation.sustentacao.databinding.FragmentListDoacaoBinding
 import com.generation.sustentacao.model.TarefaDoacao
-import com.generation.sustentacao.model.TarefaEvento
 
 class ListDoacaoFragment : Fragment(), TaskItemClickListenerDoacao {
 
@@ -33,24 +29,24 @@ class ListDoacaoFragment : Fragment(), TaskItemClickListenerDoacao {
 
         mainViewModel.listTarefaDoacao()
 
-        val adapter = TarefaDoacaoAdapter(this,mainViewModel)
+        val adapter = TarefaDoacaoAdapter(this, mainViewModel)
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
         binding.recyclerTarefa.adapter = adapter
         binding.recyclerTarefa.setHasFixedSize(true)
 
 
-        binding.buttonEvento.setOnClickListener{
+        binding.buttonEvento.setOnClickListener {
             findNavController().navigate(R.id.action_listDoacaoFragment_to_listFragment2)
         }
 
-        binding.buttonDoacao.setOnClickListener{
+        binding.buttonDoacao.setOnClickListener {
             Toast.makeText(context, "Você já está na página!", Toast.LENGTH_SHORT).show()
         }
 
-        mainViewModel.myTarefaDoacaoResponse.observe(viewLifecycleOwner){
-                response -> if (response.body() != null){
-            adapter.setListDoacao(response.body()!!)
-        }
+        mainViewModel.myTarefaDoacaoResponse.observe(viewLifecycleOwner) { response ->
+            if (response.body() != null) {
+                adapter.setListDoacao(response.body()!!)
+            }
         }
 
         return binding.root

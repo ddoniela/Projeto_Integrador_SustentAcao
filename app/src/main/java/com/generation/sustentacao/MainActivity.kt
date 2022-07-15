@@ -1,13 +1,12 @@
 package com.generation.sustentacao
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.generation.sustentacao.databinding.ActivityMainBinding
-import com.generation.sustentacao.databinding.FragmentFormBinding
-import com.generation.sustentacao.databinding.FragmentListBinding
-import com.generation.sustentacao.fragment.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,35 +17,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        val homeFragment = ListFragment()
-        val calendarFragment = CalendarFragment()
-        val chatFragment = ChatFragment()
-        val settingsFragment = SettingsFragment()
-        val postagemFragment = FormFragment()
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        val navController = findNavController(R.id.fragment_container)
 
-        makeCurrentFragment(homeFragment)
+        bottomNavigationView.setupWithNavController(navController)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.bottomNavigation.setOnNavigationItemSelectedListener {
-            when (it.itemId){
-                R.id.ic_home -> makeCurrentFragment(homeFragment)
-                R.id.ic_calendar -> makeCurrentFragment(calendarFragment)
-                R.id.ic_chat -> makeCurrentFragment(chatFragment)
-                R.id.ic_settings -> makeCurrentFragment(settingsFragment)
-                R.id.ic_postagem -> makeCurrentFragment(postagemFragment)
-            }
-
-
-            true
-        }
     }
 
-    private fun makeCurrentFragment(fragment:Fragment) =
+    private fun makeCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragment_container,fragment)
+            replace(R.id.fragment_container, fragment)
             commit()
         }
 }

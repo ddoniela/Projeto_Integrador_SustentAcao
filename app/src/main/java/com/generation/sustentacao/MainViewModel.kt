@@ -14,12 +14,11 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.time.LocalDate
 import javax.inject.Inject
-import kotlin.Exception
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-   private val repository: Repository
-        ) : ViewModel(){
+    private val repository: Repository
+) : ViewModel() {
 
     var postagemEventoSelecionada: TarefaEvento? = null
     var postagemDoacaoSelecionada: TarefaDoacao? = null
@@ -42,112 +41,114 @@ class MainViewModel @Inject constructor(
 
     val dataSelecionada = MutableLiveData<LocalDate>()
 
-    init{
+    init {
 
     }
 
-    fun listTemaEvento(){
+    fun listTemaEvento() {
         viewModelScope.launch {
-            try{
+            try {
                 val response = repository.listTemaEvento()
                 _myTemaEventoResponse.value = response
 
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
             }
         }
     }
 
-    fun addTarefaEvento(tarefa: TarefaEvento){
+    fun addTarefaEvento(tarefa: TarefaEvento) {
         viewModelScope.launch {
             try {
-               val response = repository.addTarefaEvento(tarefa)
+                val response = repository.addTarefaEvento(tarefa)
                 Log.d("Opa", response.body().toString())
                 listTarefaEvento()
 
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
             }
         }
     }
 
-    fun addTarefaDoacao(tarefaDoacao: TarefaDoacao){
+    fun addTarefaDoacao(tarefaDoacao: TarefaDoacao) {
         viewModelScope.launch {
             try {
                 val response = repository.addTarefaDoacao(tarefaDoacao)
                 Log.d("Opa", response.body().toString())
                 listTarefaDoacao()
 
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
             }
         }
     }
 
-    fun listTarefaEvento(){
+    fun listTarefaEvento() {
         viewModelScope.launch {
             try {
                 val response = repository.listTarefaEvento()
                 _myTarefaEventoResponse.value = response
 
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
             }
         }
     }
-    fun listTarefaDoacao(){
+
+    fun listTarefaDoacao() {
         viewModelScope.launch {
             try {
                 val response = repository.listTarefaDoacao()
                 _myTarefaDoacaoResponse.value = response
 
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
             }
         }
     }
 
-    fun updateTarefaEvento(tarefa: TarefaEvento){
+    fun updateTarefaEvento(tarefa: TarefaEvento) {
         viewModelScope.launch {
-            try{
+            try {
                 repository.updatePostagemEvento(tarefa)
                 listTarefaEvento()
-            }catch(e: Exception){
-                Log.d("Erro", e.message.toString())
-            }
-        }
-    }
-    fun updateTarefaDoacao(tarefaDoacao: TarefaDoacao){
-        viewModelScope.launch {
-            try{
-                repository.updatePostagemDoacao(tarefaDoacao)
-                listTarefaDoacao()
-            }catch(e: Exception){
+            } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
             }
         }
     }
 
-    fun deleteTarefaEvento(id: Long){
+    fun updateTarefaDoacao(tarefaDoacao: TarefaDoacao) {
+        viewModelScope.launch {
+            try {
+                repository.updatePostagemDoacao(tarefaDoacao)
+                listTarefaDoacao()
+            } catch (e: Exception) {
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun deleteTarefaEvento(id: Long) {
         viewModelScope.launch {
             try {
                 repository.deleteTarefaEvento(id)
                 listTarefaEvento()
 
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
 
             }
         }
     }
 
-    fun deleteTarefaDoacao(id: Long){
+    fun deleteTarefaDoacao(id: Long) {
         viewModelScope.launch {
             try {
                 repository.deleteTarefaDoacao(id)
                 listTarefaDoacao()
 
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
 
             }

@@ -6,7 +6,7 @@ data class Tema(
     var descricao: String?,
     var tarefas: List<TarefaEvento?>?
 
-    ){
+) {
 
     override fun toString(): String {
         return descricao!!

@@ -8,5 +8,4 @@ data class TarefaEvento(
     var dataHora: String,
     var autor: String,
     var tema: Tema
-        ) {
-}
+)

@@ -5,7 +5,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Response
 import javax.inject.Singleton
 
 @Module
@@ -15,7 +14,7 @@ object ServiceModule {
     @Singleton
     @Provides
 
-    fun returnRepository(): Repository{
+    fun returnRepository(): Repository {
         return Repository()
     }
 }

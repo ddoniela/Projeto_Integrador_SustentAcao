@@ -9,7 +9,7 @@
         android:id="@+id/listFragment"
         android:name="com.generation.sustentacao.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_listFragment_to_formFragment"
             app:destination="@id/formFragment" />
@@ -21,7 +21,7 @@
         android:id="@+id/formFragment"
         android:name="com.generation.sustentacao.FormFragment"
         android:label="fragment_form"
-        tools:layout="@layout/fragment_form" >
+        tools:layout="@layout/fragment_form">
         <action
             android:id="@+id/action_formFragment_to_listFragment"
             app:destination="@id/listFragment"
@@ -32,7 +32,7 @@
         android:id="@+id/postDoacaoFragment"
         android:name="com.generation.sustentacao.PostDoacaoFragment"
         android:label="fragment_post_doacao"
-        tools:layout="@layout/fragment_post_doacao" >
+        tools:layout="@layout/fragment_post_doacao">
         <action
             android:id="@+id/action_postDoacaoFragment_to_listDoacaoFragment"
             app:destination="@id/listDoacaoFragment"
@@ -43,7 +43,7 @@
         android:id="@+id/listDoacaoFragment"
         android:name="com.generation.sustentacao.ListDoacaoFragment"
         android:label="fragment_list_doacao"
-        tools:layout="@layout/fragment_list_doacao" >
+        tools:layout="@layout/fragment_list_doacao">
         <action
             android:id="@+id/action_listDoacaoFragment_to_postDoacaoFragment"
             app:destination="@id/postDoacaoFragment" />

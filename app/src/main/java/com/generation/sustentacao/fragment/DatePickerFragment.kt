@@ -3,17 +3,15 @@ package com.generation.sustentacao.fragment
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.os.Bundle
-import android.widget.CalendarView
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
 import java.time.LocalDate
 import java.time.ZoneId
 import java.util.*
-import kotlin.concurrent.timer
 
-class DatePickerFragment (
+class DatePickerFragment(
     val timerPickerListener: TimerPickerListener
-        ) : DialogFragment(), DatePickerDialog.OnDateSetListener {
+) : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val c = Calendar.getInstance()
@@ -30,11 +28,13 @@ class DatePickerFragment (
         calendar.set(Calendar.MONTH, month)
         calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-        timerPickerListener.onDateSelected(calendar.time.toInstant().atZone
-            (ZoneId.systemDefault()).toLocalDate())
+        timerPickerListener.onDateSelected(
+            calendar.time.toInstant().atZone
+                (ZoneId.systemDefault()).toLocalDate()
+        )
     }
 }
 
-interface TimerPickerListener{
+interface TimerPickerListener {
     fun onDateSelected(date: LocalDate)
 }

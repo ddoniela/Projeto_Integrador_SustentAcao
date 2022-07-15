@@ -1,18 +1,17 @@
 package com.generation.sustentacao
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.generation.sustentacao.databinding.FragmentPostDoacaoBinding
 import com.generation.sustentacao.fragment.DatePickerFragment
 import com.generation.sustentacao.fragment.TimerPickerListener
 import com.generation.sustentacao.model.TarefaDoacao
-import com.generation.sustentacao.model.TarefaEvento
 import java.time.LocalDate
 
 
@@ -37,18 +36,15 @@ class PostDoacaoFragment : Fragment(), TimerPickerListener {
 
         mainViewModel.dataSelecionada.value = LocalDate.now()
 
-        mainViewModel.dataSelecionada.observe(viewLifecycleOwner){
-                selectedDate -> binding.doacaoData.setText(selectedDate.toString())
-
+        mainViewModel.dataSelecionada.observe(viewLifecycleOwner) { selectedDate ->
+            binding.doacaoData.setText(selectedDate.toString())
         }
 
-
-        binding.postarDoacao.setOnClickListener{
+        binding.postarDoacao.setOnClickListener {
             inserirNoBanco()
-
         }
 
-        binding.doacaoData.setOnClickListener{
+        binding.doacaoData.setOnClickListener {
             DatePickerFragment(this)
                 .show(parentFragmentManager, "DatePicker")
         }
@@ -57,8 +53,8 @@ class PostDoacaoFragment : Fragment(), TimerPickerListener {
     }
 
     fun validarCampos(
-        autor:String, nome: String, quantidade: String, descricao: String): Boolean {
-
+        autor: String, nome: String, quantidade: String, descricao: String
+    ): Boolean {
         return !(
                 (nome == "" || nome.length < 3 || nome.length > 20) ||
                         (descricao == "" || descricao.length < 5 || descricao.length > 200) ||
@@ -66,8 +62,7 @@ class PostDoacaoFragment : Fragment(), TimerPickerListener {
                 )
     }
 
-    fun inserirNoBanco(){
-
+    fun inserirNoBanco() {
         val autor = binding.doacaoAutor.text.toString()
         val produto = binding.doacaoNome.text.toString()
         val quantidade = binding.doacaoQuantidade.text.toString()
@@ -77,12 +72,14 @@ class PostDoacaoFragment : Fragment(), TimerPickerListener {
 
 
         if (validarCampos(autor, produto, quantidade, descricao)) {
-            if(postagemSelecionada == null){
+            if (postagemSelecionada == null) {
                 val tarefa = TarefaDoacao(0, autor, produto, quantidade, descricao, entrega, data)
                 mainViewModel.addTarefaDoacao(tarefa)
-            }else {
-                val tarefa = TarefaDoacao(postagemSelecionada?.id!!,
-                    produto, quantidade, descricao, descricao, entrega, data)
+            } else {
+                val tarefa = TarefaDoacao(
+                    postagemSelecionada?.id!!,
+                    produto, quantidade, descricao, descricao, entrega, data
+                )
                 mainViewModel.updateTarefaDoacao(tarefa)
             }
             Toast.makeText(context, "Doação criada!", Toast.LENGTH_SHORT).show()
@@ -93,9 +90,10 @@ class PostDoacaoFragment : Fragment(), TimerPickerListener {
 
 
     }
-    private fun carregarDados(){
+
+    private fun carregarDados() {
         postagemSelecionada = mainViewModel.postagemDoacaoSelecionada
-        if(postagemSelecionada != null){
+        if (postagemSelecionada != null) {
             binding.doacaoNome.setText(postagemSelecionada?.produto)
             binding.doacaoQuantidade.setText(postagemSelecionada?.quantidade)
             binding.doacaoDescricao.setText(postagemSelecionada?.descricao)
@@ -107,6 +105,7 @@ class PostDoacaoFragment : Fragment(), TimerPickerListener {
             binding.doacaoData.text = null
         }
     }
+
     override fun onDateSelected(date: LocalDate) {
         mainViewModel.dataSelecionada.value = date
     }

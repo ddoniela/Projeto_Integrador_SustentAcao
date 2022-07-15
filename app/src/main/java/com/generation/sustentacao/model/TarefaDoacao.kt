@@ -8,5 +8,4 @@ class TarefaDoacao(
     var descricao: String,
     var entrega: Boolean,
     var data: String
-)  {
-}
+)

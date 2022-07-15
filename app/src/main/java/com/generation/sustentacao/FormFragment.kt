@@ -2,13 +2,13 @@ package com.generation.sustentacao
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.generation.sustentacao.databinding.FragmentFormBinding
@@ -40,20 +40,20 @@ class FormFragment : Fragment(), TimerPickerListener {
 
         mainViewModel.dataSelecionada.value = LocalDate.now()
 
-        mainViewModel.myTemaEventoResponse.observe(viewLifecycleOwner){
-           response -> Log.d("Requisicao", response.body().toString())
+        mainViewModel.myTemaEventoResponse.observe(viewLifecycleOwner) { response ->
+            Log.d("Requisicao", response.body().toString())
             spinnerTema(response.body())
         }
 
-        mainViewModel.dataSelecionada.observe(viewLifecycleOwner){
-            selectedDate -> binding.editTextDate.setText(selectedDate.toString())
+        mainViewModel.dataSelecionada.observe(viewLifecycleOwner) { selectedDate ->
+            binding.editTextDate.text = selectedDate.toString()
         }
 
-        binding.buttonPostar.setOnClickListener{
+        binding.buttonPostar.setOnClickListener {
             inserirNoBanco()
         }
 
-        binding.editTextDate.setOnClickListener{
+        binding.editTextDate.setOnClickListener {
             DatePickerFragment(this)
                 .show(parentFragmentManager, "DatePicker")
         }
@@ -61,8 +61,8 @@ class FormFragment : Fragment(), TimerPickerListener {
         return binding.root
     }
 
-    private fun spinnerTema(listTema: List<Tema>?){
-        if (listTema != null){
+    private fun spinnerTema(listTema: List<Tema>?) {
+        if (listTema != null) {
             binding.spinnerTema.adapter =
                 ArrayAdapter(
                     requireContext(),
@@ -72,7 +72,7 @@ class FormFragment : Fragment(), TimerPickerListener {
                 )
 
             binding.spinnerTema.onItemSelectedListener =
-                object : AdapterView.OnItemSelectedListener{
+                object : AdapterView.OnItemSelectedListener {
                     override fun onItemSelected(
                         parent: AdapterView<*>?,
                         view: View?,
@@ -101,14 +101,14 @@ class FormFragment : Fragment(), TimerPickerListener {
                 (nome == "" || nome.length < 3 || nome.length > 20) ||
                         (descricao == "" || descricao.length < 5 || descricao.length > 200) ||
                         (link == "" || link.length > 800) ||
-                            (autor == "" || autor.length > 50)
+                        (autor == "" || autor.length > 50)
 
 
                 )
 
     }
 
-    fun inserirNoBanco(){
+    fun inserirNoBanco() {
 
         val titulo = binding.nomeEventoText.text.toString()
         val descricao = binding.descricaoPng.text.toString()
@@ -119,12 +119,14 @@ class FormFragment : Fragment(), TimerPickerListener {
 
         if (validarCampos(titulo, descricao, imagem, autor)) {
 
-            if(postagemSelecionada == null){
+            if (postagemSelecionada == null) {
                 val tarefa = TarefaEvento(0, titulo, descricao, imagem, dataHora, autor, tema)
                 mainViewModel.addTarefaEvento(tarefa)
-            }else {
-                val tarefa = TarefaEvento(postagemSelecionada?.id!!,
-                    titulo, descricao, imagem, dataHora, autor, tema)
+            } else {
+                val tarefa = TarefaEvento(
+                    postagemSelecionada?.id!!,
+                    titulo, descricao, imagem, dataHora, autor, tema
+                )
                 mainViewModel.updateTarefaEvento(tarefa)
             }
             Toast.makeText(context, "Evento salvo", Toast.LENGTH_SHORT).show()
@@ -135,9 +137,10 @@ class FormFragment : Fragment(), TimerPickerListener {
 
 
     }
-    private fun carregarDados(){
+
+    private fun carregarDados() {
         postagemSelecionada = mainViewModel.postagemEventoSelecionada
-        if(postagemSelecionada != null){
+        if (postagemSelecionada != null) {
             binding.nomeEventoText.setText(postagemSelecionada?.titulo)
             binding.descricaoPng.setText(postagemSelecionada?.descricao)
             binding.linkImagem.setText(postagemSelecionada?.imagem)
@@ -151,6 +154,7 @@ class FormFragment : Fragment(), TimerPickerListener {
             binding.editTextNomedaOng.text = null
         }
     }
+
     override fun onDateSelected(date: LocalDate) {
         mainViewModel.dataSelecionada.value = date
     }

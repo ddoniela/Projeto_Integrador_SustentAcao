@@ -8,14 +8,15 @@ import retrofit2.Response
 class Repository {
 
     //Evento
-    suspend fun listTemaEvento(): Response<List<Tema>>{
+    suspend fun listTemaEvento(): Response<List<Tema>> {
         return RetrofitInstance.api.listTemaEvento()
     }
-    suspend fun addTarefaEvento(tarefa: TarefaEvento): Response<TarefaEvento>{
+
+    suspend fun addTarefaEvento(tarefa: TarefaEvento): Response<TarefaEvento> {
         return RetrofitInstance.api.addTarefaEvento(tarefa)
     }
 
-    suspend fun listTarefaEvento(): Response<List<TarefaEvento>>{
+    suspend fun listTarefaEvento(): Response<List<TarefaEvento>> {
         return RetrofitInstance.api.listTarefaEvento()
     }
 
@@ -29,11 +30,11 @@ class Repository {
 
 
     //Doacao
-    suspend fun addTarefaDoacao(tarefaDoacao: TarefaDoacao): Response<TarefaDoacao>{
+    suspend fun addTarefaDoacao(tarefaDoacao: TarefaDoacao): Response<TarefaDoacao> {
         return RetrofitInstance.api.addTarefaDoacao(tarefaDoacao)
     }
 
-    suspend fun listTarefaDoacao(): Response<List<TarefaDoacao>>{
+    suspend fun listTarefaDoacao(): Response<List<TarefaDoacao>> {
         return RetrofitInstance.api.listTarefaDoacao()
     }
 
@@ -41,7 +42,7 @@ class Repository {
         return RetrofitInstance.api.updatePostagemDoacao(tarefaDoacao)
     }
 
-        suspend fun deleteTarefaDoacao(id: Long): Response<TarefaDoacao> {
-            return RetrofitInstance.api.deleteTarefaDoacao(id)
-        }
+    suspend fun deleteTarefaDoacao(id: Long): Response<TarefaDoacao> {
+        return RetrofitInstance.api.deleteTarefaDoacao(id)
+    }
 }
