@@ -85,4 +85,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="309dp"
+        android:layout_height="36dp"
+        android:layout_margin="8dp"
+        android:background="#ffffff"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Pesquise Aqui..." />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

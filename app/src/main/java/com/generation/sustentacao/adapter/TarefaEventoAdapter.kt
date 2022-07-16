@@ -5,20 +5,24 @@ import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.generation.sustentacao.ListFragment
 import com.generation.sustentacao.MainViewModel
 import com.generation.sustentacao.databinding.CardEventosBinding
 import com.generation.sustentacao.model.TarefaEvento
+import java.util.*
 
 class TarefaEventoAdapter(
     private val context: Context,
     private val taskItemClickListenerEvento: ListFragment,
     private val mainViewModel: MainViewModel,
 
-    ) : RecyclerView.Adapter<TarefaEventoAdapter.TarefaViewHolder>() {
+    ) : RecyclerView.Adapter<TarefaEventoAdapter.TarefaViewHolder>(), Filterable {
     private var listTarefa = emptyList<TarefaEvento>()
+    private var listTarefaFilterable = emptyList<TarefaEvento>()
 
     class TarefaViewHolder(val binding: CardEventosBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -55,14 +59,39 @@ class TarefaEventoAdapter(
             showAlertDialogEvento(tarefa.id)
         }
     }
+    override fun getFilter(): Filter {
+        return object: Filter(){
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val query = constraint?.toString().orEmpty().lowercase(Locale.ROOT).trim()
+                var filterResults = FilterResults()
+                if (query.isEmpty() || query == "" || query == null){
+                    filterResults.values = listTarefa
+                } else {
+                    filterResults.values = listTarefa.filter {
+                        it.titulo.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) ||
+                                it.autor.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) ||
+                                it.descricao.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
+                    }
+                }
+                return filterResults
+            }
+
+            @Suppress("UNCHECKED_CAST")
+            override fun publishResults(constraint: CharSequence?, filterResults: FilterResults?) {
+                listTarefaFilterable = filterResults?.values as List<TarefaEvento>
+                notifyDataSetChanged()
+            }
+        }
+    }
 
 
     override fun getItemCount(): Int {
-        return listTarefa.size
+        return listTarefaFilterable.size
     }
 
     fun setList(list: List<TarefaEvento>) {
         listTarefa = list.sortedBy { it.id }
+        listTarefaFilterable = list.sortedBy { it.id }
         notifyDataSetChanged()
     }
 
