@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -47,6 +48,21 @@ class ListFragment : Fragment(), TaskItemClickListenerEvento {
                 adapter.setList(response.body()!!)
             }
         }
+        // aq a lógica do searchview, ele capta oq é digitado e joga dentro de um objeto que puxa o filtro
+        // de dentro do Adapter TarefaEventoAdapter, o principal é o onQueryTextChange, o onQuery poderia
+        // ficar até sem nada
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                adapter.filter.filter(query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter.filter(newText)
+                return false
+            }
+
+        })
 
         return binding.root
     }
