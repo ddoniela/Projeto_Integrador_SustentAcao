@@ -5,30 +5,20 @@
       <map>
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/custom_border.xml" value="0.1945" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/custom_login.xml" value="0.1945" />
-
-        <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
-
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_register.xml" value="0.25" />
-
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/autentication.xml" value="0.25" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_doacao.xml" value="0.17074275362318841" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_eventos.xml" value="0.17074275362318841" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_base_nav.xml" value="0.17074275362318841" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_calendar.xml" value="0.17074275362318841" />
-
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_form.xml" value="0.2" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_home.xml" value="0.2" />
-        <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list.xml" value="0.25" />
-        <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list_doacao.xml" value="0.22" />
-        <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_post_doacao.xml" value="0.25" />
-        <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_postagem.xml" value="0.2" />
-
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list.xml" value="0.17074275362318841" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list_doacao.xml" value="0.22" />
         <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_post_doacao.xml" value="0.25" />
-
+        <entry key="..\:/Projetos-Generation/Android/AndroidStudioProjects/Projeto Integrador -Testes/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_postagem.xml" value="0.2" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_layout.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_form.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/conta/Exercicios-TM3/Android/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list.xml" value="0.17074275362318841" />
@@ -90,15 +80,9 @@
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.236" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/ic_baseline_person_pin_24.xml" value="0.236" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/drawable/ic_launcher_background.xml" value="0.236" />
-
-        <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_doacao.xml" value="0.176" />
-        <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_eventos.xml" value="0.4" />
-
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_doacao.xml" value="0.4" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_eventos.xml" value="0.264" />
-
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/cardpost_layout.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_calendar.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_chat.xml" value="0.24547101449275363" />
@@ -107,19 +91,15 @@
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list.xml" value="0.176" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list_doacao.xml" value="0.17192982456140352" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_menu_base.xml" value="0.25" />
-
-        <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_post_doacao.xml" value="0.536" />
-        <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_postagem.xml" value="0.1322463768115942" />
-
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_post_doacao.xml" value="0.25" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_postagem.xml" value="0.24895833333333334" />
-
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_settings.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/nawan/AndroidStudioProjects/Projeto_Integrador_SustentAcao/app/src/main/res/menu/nav_menu.xml" value="0.264" />
         <entry key="..\:/Users/usuario/Desktop/Projeto/Projetos-Generation/Android/AndroidStudioProjects/Sustentacao-Projeto/app/src/main/res/layout/activity_main.xml" value="0.2234375" />
         <entry key="..\:/Users/usuario/Desktop/Projeto/Projetos-Generation/Android/AndroidStudioProjects/Sustentacao-Projeto/app/src/main/res/layout/post_doacao.xml" value="0.48326055312954874" />
         <entry key="..\:/Users/usuario/Desktop/Projeto_Integrador_SustentAcao/app/src/main/res/layout/card_layout.xml" value="0.14945652173913043" />
         <entry key="..\:/Users/usuario/Desktop/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_form.xml" value="0.1" />
+        <entry key="..\:/Users/usuario/Desktop/Projeto_Integrador_SustentAcao/app/src/main/res/layout/fragment_list_doacao.xml" value="0.2234375" />
         <entry key="..\:/Users/usuario/Desktop/Projeto_Integrador_SustentAcao/app/src/main/res/layout/post_doacao.xml" value="0.21" />
       </map>
     </option>

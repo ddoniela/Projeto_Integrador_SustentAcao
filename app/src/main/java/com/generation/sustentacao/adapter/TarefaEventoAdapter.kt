@@ -22,6 +22,7 @@ class TarefaEventoAdapter(
 
     ) : RecyclerView.Adapter<TarefaEventoAdapter.TarefaViewHolder>(), Filterable {
     private var listTarefa = emptyList<TarefaEvento>()
+    // essa variavel serviria como backup pra alocar o filtro dinamicamente sem retirar os elementos
     private var listTarefaFilterable = emptyList<TarefaEvento>()
 
     class TarefaViewHolder(val binding: CardEventosBinding) : RecyclerView.ViewHolder(binding.root)
@@ -59,6 +60,11 @@ class TarefaEventoAdapter(
             showAlertDialogEvento(tarefa.id)
         }
     }
+    /* aq ta toda a lógica de filtro, primeiro ele receba os textos digitais de dentro do list fragment
+    dps checa se é nulo, trasformar em string, checa se ta vazio e o lowecase(locale.Root) faz o trabalho
+    de tirar o caseSensitive, o .filter{} percorre os dados dos objetos e compara a variavel query que
+    recebe o texto digitado pra ver se existe dentro do conteudo dos objetos
+     */
     override fun getFilter(): Filter {
         return object: Filter(){
             override fun performFiltering(constraint: CharSequence?): FilterResults {
@@ -78,7 +84,7 @@ class TarefaEventoAdapter(
 
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, filterResults: FilterResults?) {
-                listTarefaFilterable = filterResults?.values as List<TarefaEvento>
+                listTarefa = filterResults?.values as List<TarefaEvento>
                 notifyDataSetChanged()
             }
         }
@@ -86,12 +92,11 @@ class TarefaEventoAdapter(
 
 
     override fun getItemCount(): Int {
-        return listTarefaFilterable.size
+        return listTarefa.size
     }
 
     fun setList(list: List<TarefaEvento>) {
         listTarefa = list.sortedBy { it.id }
-        listTarefaFilterable = list.sortedBy { it.id }
         notifyDataSetChanged()
     }
 

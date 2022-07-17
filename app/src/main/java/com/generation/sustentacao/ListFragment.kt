@@ -48,15 +48,18 @@ class ListFragment : Fragment(), TaskItemClickListenerEvento {
                 adapter.setList(response.body()!!)
             }
         }
+        // aq a lógica do searchview, ele capta oq é digitado e joga dentro de um objeto que puxa o filtro
+        // de dentro do Adapter TarefaEventoAdapter, o principal é o onQueryTextChange, o onQuery poderia
+        // ficar até sem nada
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
-                adapter.filter.filter(query.trim())
-                return true
+                adapter.filter.filter(query)
+                return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                adapter.filter.filter(newText.trim())
-                return true
+                adapter.filter.filter(newText)
+                return false
             }
 
         })
